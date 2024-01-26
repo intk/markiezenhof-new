@@ -1,0 +1,96 @@
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName: 'Libre Franklin';
+@importGoogleFonts: true;
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all*/
+@emSize: 16px;
+
+/* The size of page text*/
+@fontSize: 18px;
+
+@fontWeightMedium: 500;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+@theme-color-light-grey: #eeede6;
+@theme-color-dark-green: #277130;
+@theme-color-dark-blue: #103867;
+@theme-color-light-blue: #00aeef;
+@theme-color-orange: #fce602;
+@theme-color-yellow: #ffe600;
+@theme-color-dark-yellow: #ffe600;
+@theme-color-dark-red: #9a161e;
+@theme-color-red: #d2232a;
+@theme-color-light-purple: #9789a5;
+@theme-color-purple: #92278f;
+@theme-color-green: #2da55d;
+
+@primaryColor: @theme-color-yellow;
+@primaryText: #000000;
+@secondaryColor: @theme-color-purple;
+@secondaryText: #ffffff;
+@footerColor: #003f5d;
+@footerText: #ffffff;
+
+@primaryDarker: @theme-color-dark-yellow;
+
+@greyHover: @primaryColor;
+@greyActive: @primaryColor;
+
+@textColor: #333;
+@bgColor: #fff;
+@darkGrey: #272729;
+@darkGrey2: #2e2e2e;
+@lightGrey: #464649;
+@lightenGrey: #9d9d9d;
+@siteDarkWhite: #d7dadc;
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight: 800;
+@headerFont: @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont: @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+@h1: 50px;
+@h2: 34px;
+@h3: 24px;
+@h4: 16px;
+@h5: 13px;
+@h6: 10px;
+
+/*-------------------
+        Page
+--------------------*/
+@lineHeight: 1.5em;
+
+/*-------------------
+       Links
+--------------------*/
+
+@linkColor: @theme-color-dark-green;
+@linkHoverColor: @theme-color-dark-green;
+@linkUnderline: none;
+
+/*-------------------
+        Grid
+--------------------*/
+
+@columnCount: 12;
+
+/*-------------------
+      SITE VARIABLES
+--------------------*/
+
+@leadimageHeight: 470px;

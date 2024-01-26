@@ -1,0 +1,130 @@
+# Translation of plone.pot to Romanian
+# Alin Voinea <avoinea@plone.org>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-27T19:30:59.079Z\n"
+"PO-Revision-Date: 2016-10-22 16:41-0500\n"
+"Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Language: ro\n"
+"Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: ro\n"
+"Language-Name: Romanian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Alignment
+msgid "Alignment"
+msgstr ""
+
+#: components/blocks/Break/schema
+# defaultMessage: Break
+msgid "Break"
+msgstr ""
+
+#: components/blocks/Image/ImageBlockEdit
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr ""
+
+#: components/blocks/Button/schema
+# defaultMessage: Button
+msgid "Button"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Close menu
+msgid "Close menu"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Future
+msgid "Future"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Image override
+msgid "Image override"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Now on display
+msgid "Now on display"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Open in a new tab
+msgid "Open in a new tab"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Open menu
+msgid "Open menu"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Past exhibition
+msgid "Past exhibition"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search
+msgid "Search"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search Site
+msgid "Search Site"
+msgstr ""
+
+#: components/theme/Footer/NewsletterSubscribe
+# defaultMessage: Subscribe
+msgid "Subscribe"
+msgstr ""
+
+#: components/theme/LanguageSelector/LanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Target
+msgid "Target"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Head title
+msgid "head_title"
+msgstr ""

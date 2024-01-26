@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "nicola@rawmaterial.it",
+      "properties": {
+        "fullname": "haagshistorischmuseum",
+        "location": "World"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "haagshistorischmuseum"
+    }
+  ],
+    "team": [
+  ]
+}

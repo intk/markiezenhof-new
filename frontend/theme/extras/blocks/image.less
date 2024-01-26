@@ -1,0 +1,29 @@
+.block.image {
+  figcaption {
+    .image-source {
+      display: inline-block;
+      margin-right: 0.5rem;
+
+      + .image-caption {
+        &::before {
+          display: inline-block;
+          margin-right: 0.5rem;
+          content: ' ― ';
+        }
+      }
+    }
+  }
+
+  &.full {
+    margin-bottom: 3rem;
+  }
+
+  figure.full-width {
+    figcaption {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

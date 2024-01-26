@@ -1,0 +1,51 @@
+.block.text-highlight {
+  display: flex;
+  min-height: 70px;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1rem;
+  margin-bottom: 3rem;
+  background-color: @theme-color-yellow;
+
+  &:not(.edit-mode) {
+    min-height: 70px;
+  }
+
+  .text-slate-editor-inner {
+    width: 100%;
+
+    .slate-editor {
+      div[data-slate-editor] {
+        min-height: auto !important;
+      }
+    }
+  }
+
+  p {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0;
+    color: #000;
+    font-size: 21px;
+    line-height: 1.714;
+    text-align: left;
+
+    @media (min-width: 992px) {
+      text-align: center;
+    }
+
+    a {
+      border-bottom: 2px solid #000 !important;
+      margin-left: 20px;
+      color: #000 !important;
+      text-decoration: none !important;
+
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid transparent !important;
+        text-decoration: none !important;
+      }
+    }
+  }
+}

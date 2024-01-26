@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
+
+  <plone:behavior
+      name="haagshistorischmuseum.multiple_content_view"
+      title="Multiple Content View"
+      description="Mark an item as multiple content view"
+      provides=".multiple_content_view.IMultipleContentView"
+      />
+
+</configure>

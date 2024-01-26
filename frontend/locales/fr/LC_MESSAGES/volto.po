@@ -1,0 +1,139 @@
+# Translation of plone.pot to French
+# French Translation Team <plone-i18n@lists.sourceforge.net>, 2003-2006.
+# Sebastien Douche <sdouche@gmail.com>, 2005-2007.
+# Encolpe Degoute <encolpe.degoute@ingeniweb.com>, 2006, 2007, 2008.
+# Gilles Lenfant <gilles.lenfant@ingeniweb.com>, 2008.
+# Encolpe Degoute <encolpe@gmail.com>, 2008.
+# Vincent Fretin <vincent.fretin@gmail.com>, 2009.
+# Kevin Deldycke <kevin@deldycke.com>, 2009.
+# JeanMichel FRANCOIS <toutpt@gmail.com>, 2010.
+# Denis Bitouzé <denis.bitouze@univ-littoral.fr>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plone\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-27T19:30:59.079Z\n"
+"PO-Revision-Date: 2016-10-22 16:41-0500\n"
+"Last-Translator: Benoît Suttor <benoit.suttor@imio.be>\n"
+"Language: fr\n"
+"Language-Team: French <plone-fr@lists.plone.org>\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Alignment
+msgid "Alignment"
+msgstr ""
+
+#: components/blocks/Break/schema
+# defaultMessage: Break
+msgid "Break"
+msgstr ""
+
+#: components/blocks/Image/ImageBlockEdit
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr ""
+
+#: components/blocks/Button/schema
+# defaultMessage: Button
+msgid "Button"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Close menu
+msgid "Close menu"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Future
+msgid "Future"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Image override
+msgid "Image override"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Now on display
+msgid "Now on display"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Open in a new tab
+msgid "Open in a new tab"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Open menu
+msgid "Open menu"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Past exhibition
+msgid "Past exhibition"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search
+msgid "Search"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search Site
+msgid "Search Site"
+msgstr ""
+
+#: components/theme/Footer/NewsletterSubscribe
+# defaultMessage: Subscribe
+msgid "Subscribe"
+msgstr ""
+
+#: components/theme/LanguageSelector/LanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Target
+msgid "Target"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Head title
+msgid "head_title"
+msgstr ""

@@ -1,0 +1,124 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Alignment
+msgid "Alignment"
+msgstr ""
+
+#: components/blocks/Break/schema
+# defaultMessage: Break
+msgid "Break"
+msgstr ""
+
+#: components/blocks/Image/ImageBlockEdit
+# defaultMessage: Browse the site, drop an image, or type an URL
+msgid "Browse the site, drop an image, or type an URL"
+msgstr ""
+
+#: components/blocks/Button/schema
+# defaultMessage: Button
+msgid "Button"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Close menu
+msgid "Close menu"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Description
+msgid "Description"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Future
+msgid "Future"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Image override
+msgid "Image override"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Now on display
+msgid "Now on display"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Open in a new tab
+msgid "Open in a new tab"
+msgstr ""
+
+#: components/theme/Navigation/Navigation
+# defaultMessage: Open menu
+msgid "Open menu"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+#: components/theme/Header/HeroSection
+# defaultMessage: Past exhibition
+msgid "Past exhibition"
+msgstr ""
+
+#: components/blocks/Teaser/TeaserDefaultTemplate
+#: components/blocks/Teaser/TeaserHeroTemplate
+# defaultMessage: Please choose an existing content as source for this element
+msgid "Please choose an existing content as source for this element"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search
+msgid "Search"
+msgstr ""
+
+#: components/theme/SearchWidget/SearchWidget
+# defaultMessage: Search Site
+msgid "Search Site"
+msgstr ""
+
+#: components/theme/Footer/NewsletterSubscribe
+# defaultMessage: Subscribe
+msgid "Subscribe"
+msgstr ""
+
+#: components/theme/LanguageSelector/LanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Target
+msgid "Target"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Teaser
+msgid "Teaser"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Title
+msgid "Title"
+msgstr ""
+
+#: components/blocks/Teaser/schema
+# defaultMessage: Head title
+msgid "head_title"
+msgstr ""

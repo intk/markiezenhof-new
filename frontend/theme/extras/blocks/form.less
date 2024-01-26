@@ -1,0 +1,37 @@
+.block.form {
+  .ui.segment {
+    border: 0;
+    box-shadow: none;
+  }
+
+  button[type='submit'].ui.button.primary {
+    display: inline-block;
+    padding: 7px 25px;
+    border: 2px solid @theme-color-yellow !important;
+    background-color: @theme-color-yellow !important;
+    border-radius: 0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #000 !important;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.7;
+    text-shadow: none;
+    text-transform: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+      border-color 0.3s ease-in-out !important;
+
+    @media (max-width: 991px) {
+      padding: 7px 15px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: @theme-color-purple !important;
+      background-color: @theme-color-purple !important;
+      color: #fff !important;
+      text-decoration: none !important;
+    }
+  }
+}

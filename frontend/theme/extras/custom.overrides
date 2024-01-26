@@ -1,0 +1,6 @@
+@import url('main.less');
+@import url('header.less');
+@import url('footer.less');
+@import url('search.less');
+
+@import url('blocks.less');

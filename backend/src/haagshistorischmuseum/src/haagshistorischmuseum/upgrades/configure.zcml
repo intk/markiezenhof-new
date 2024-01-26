@@ -1,0 +1,56 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <!-- Example upgrade step
+  <genericsetup:upgradeSteps
+      profile="haagshistorischmuseum:default"
+      source="20230310001"
+      destination="20230229001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update registry value"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+  -->
+
+  <genericsetup:upgradeSteps
+      profile="haagshistorischmuseum:default"
+      source="20230310001"
+      destination="20230411001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update registry value"
+        import_steps="plone.app.registry"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="haagshistorischmuseum:default"
+      source="20230411001"
+      destination="20230411002"
+      >
+    <genericsetup:upgradeDepends
+        title="Update types value"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+  <genericsetup:upgradeSteps
+      profile="haagshistorischmuseum:default"
+      source="20230411002"
+      destination="20230428001"
+      >
+    <genericsetup:upgradeDepends
+        title="Update registry value"
+        import_steps="plone.app.registry"
+        />
+    <genericsetup:upgradeDepends
+        title="Update types value"
+        import_steps="typeinfo"
+        />
+  </genericsetup:upgradeSteps>
+
+</configure>
