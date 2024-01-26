@@ -136,3 +136,9 @@ all: ## Create new box, run ansible, deploy stack
 	fi
 	$(MAKE) run-playbook
 	$(MAKE) deploy
+
+.PHONY: remove-all
+remove-all:
+	${DOCKER_CONTEXT} service rm plone_backend
+	${DOCKER_CONTEXT} service rm plone_frontend
+	${DOCKER_CONTEXT} service rm plone_traefik
