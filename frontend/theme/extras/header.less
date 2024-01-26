@@ -624,13 +624,16 @@ body.has-hero-image {
         font-weight: 700;
         line-height: 50px;
 
+        // &:after {
+        //   position: absolute;
+        //   top: 0;
+        //   right: -44px;
+        //   border-bottom: 50px solid transparent;
+        //   border-left: 44px solid #f58220;
+        //   content: '';
+        // }
         &:after {
-          position: absolute;
-          top: 0;
-          right: -44px;
-          border-bottom: 50px solid transparent;
-          border-left: 44px solid #f58220;
-          content: '';
+          display: none !important;
         }
 
         &.future {
@@ -644,9 +647,9 @@ body.has-hero-image {
         &.current {
           background-color: #00aeef;
 
-          &:after {
-            border-left: 44px solid #00aeef;
-          }
+          // &:after {
+          //   border-left: 44px solid #00aeef;
+          // }
         }
       }
     }
