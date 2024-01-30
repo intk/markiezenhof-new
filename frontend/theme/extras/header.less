@@ -625,14 +625,6 @@ body.has-hero-image {
         font-weight: 700;
         line-height: 50px;
 
-        // &:after {
-        //   position: absolute;
-        //   top: 0;
-        //   right: -44px;
-        //   border-bottom: 50px solid transparent;
-        //   border-left: 44px solid #f58220;
-        //   content: '';
-        // }
         &:after {
           display: none !important;
         }
@@ -648,9 +640,6 @@ body.has-hero-image {
         &.current {
           background-color: #00aeef;
 
-          // &:after {
-          //   border-left: 44px solid #00aeef;
-          // }
         }
       }
     }
@@ -658,24 +647,8 @@ body.has-hero-image {
     .herosection-content-wrapper {
       position: relative;
 
-      &::after {
-        position: absolute;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 70%;
-        height: 70%;
-        background-blend-mode: multiply;
-        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzU2cHgiIGhlaWdodD0iMjE1cHgiIHZpZXdCb3g9IjAgMCAzNTYgMjE1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxzY3JpcHQgeG1sbnM9IiIvPgogICAgPHRpdGxlPnogRm90byBvdmVybGF5IGhlYWRlciAxIENvcHkgMTA4PC90aXRsZT4KICAgIDxnIGlkPSJ6LUZvdG8tb3ZlcmxheS1oZWFkZXItMS1Db3B5LTEwOCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtMS1Db3B5LTI0IiBmaWxsPSIjMDBBRUVGIiBwb2ludHM9Ii0wLjUgMCAtMC41IDIxNSAxNzguNSAwIi8+CiAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtMS1Db3B5LTY2IiBmaWxsPSIjRjU4MjIwIiBwb2ludHM9IjE3OSAtNC4yNjMyNTY0MWUtMTMgMTc5IDE0My4wNjY5MTQgMjk4LjExMTUyNCAtNC4yNjMyNTY0MWUtMTMiLz4KICAgIDwvZz4KPGRpdiB4bWxucz0iIiBpZD0iZGl2U2NyaXB0c1VzZWQiIHN0eWxlPSJkaXNwbGF5OiBub25lIi8+PHNjcmlwdCB4bWxucz0iIiBpZD0iZ2xvYmFsVmFyc0RldGVjdGlvbiIgc3JjPSJtb3otZXh0ZW5zaW9uOi8vNjRlYmQ0OGQtYThhYS00NzUxLWIwMWUtNjViNDgzMmNhNTU1L2pzL3dyc19lbnYuanMiLz48L3N2Zz4=');
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: '';
-        mix-blend-mode: multiply;
-
-        @media (max-width: 991px) {
-          width: 90%;
-          height: 50%;
-        }
+      &::after{
+        display: none !important;
       }
 
       .header-title-dates {
