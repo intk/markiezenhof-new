@@ -1,8 +1,7 @@
-import React from 'react';
-import { Container } from 'semantic-ui-react';
-import { BodyClass } from '@plone/volto/helpers';
 import Image from '@package/components/theme/Image/Image';
+import { BodyClass } from '@plone/volto/helpers';
 import { defineMessages, useIntl } from 'react-intl';
+import { Container } from 'semantic-ui-react';
 
 const messages = defineMessages({
   pastExibition: {
@@ -158,11 +157,13 @@ function HeroSection(props) {
           )}
         </Container>
       )}
-      <div className="description-container">
-        <Container>
-          {description && <p className="content-description">{description}</p>}
-        </Container>
-      </div>
+      {description && (
+        <div className="description-container">
+          <Container>
+            <p className="content-description">{description}</p>
+          </Container>
+        </div>
+      )}
     </div>
   );
 }
