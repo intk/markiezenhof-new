@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { defineMessages, injectIntl } from 'react-intl';
 
 const messages = defineMessages({
