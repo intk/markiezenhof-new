@@ -1,4 +1,4 @@
-import { injectIntl, defineMessages } from 'react-intl';
+import { defineMessages, injectIntl } from 'react-intl';
 
 const messages = defineMessages({
   subscribe: {
@@ -10,7 +10,6 @@ const messages = defineMessages({
 const NewsletterSubscribe = ({ intl }) => (
   <div className="newsletter-subscribe">
     <a
-      href="https://mailchi.mp/fdcc9a135efd/nieuwsbrief-haags-historisch-museum"
       target="_blank"
       rel="noopener noreferrer"
       className="newsletter-subscribe-link"
