@@ -30,7 +30,7 @@
 @theme-color-yellow: #ffe600;
 @theme-color-dark-yellow: #ffe600;
 @theme-color-dark-red: #9a161e;
-@theme-color-red: #d2232a;
+@theme-color-red: #df0934;
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
 @theme-color-green: #2da55d;
