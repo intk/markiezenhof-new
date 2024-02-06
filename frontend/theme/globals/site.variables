@@ -79,8 +79,8 @@
        Links
 --------------------*/
 
-@linkColor: @theme-color-dark-green;
-@linkHoverColor: @theme-color-dark-green;
+@linkColor: @theme-color-light-blue;
+@linkHoverColor: @theme-color-light-blue;
 @linkUnderline: none;
 
 /*-------------------
