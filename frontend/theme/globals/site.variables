@@ -29,8 +29,6 @@
 @theme-color-dark-blue: #103867;
 @theme-color-blue: #008da9;
 @theme-color-orange: #fce602;
-@theme-color-yellow: #ffe600;
-@theme-color-dark-yellow: #ffe600;
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
 
@@ -42,7 +40,7 @@
 @footerColor: #df0934;
 @footerText: #ffffff;
 
-@primaryDarker: @theme-color-dark-yellow;
+@primaryDarker: @theme-color-blue;
 
 @greyHover: @primaryColor;
 @greyActive: @primaryColor;
