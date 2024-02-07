@@ -22,21 +22,17 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@theme-color-light-grey: #eeede6;
-@theme-color-dark-green: #277130;
+@theme-color-dark-gray: #5e5e5e;
+@theme-color-light-gray: #f5f5f5;
+@theme-color-red: #df0934;
+@theme-color-light-red: #f1b0bc;
 @theme-color-dark-blue: #103867;
-@theme-color-light-blue: #008da9;
+@theme-color-blue: #008da9;
 @theme-color-orange: #fce602;
 @theme-color-yellow: #ffe600;
 @theme-color-dark-yellow: #ffe600;
-@theme-color-dark-red: #9a161e;
-@theme-color-red: #df0934;
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
-@theme-color-green: #2da55d;
-@theme-color-light-red: #f1b0bc;
-@theme-color-dark-gray: #5e5e5e;
-@theme-color-light-gray: #f5f5f5;
 
 @primaryColor: @theme-color-yellow;
 @primaryText: #000000;
@@ -82,8 +78,8 @@
        Links
 --------------------*/
 
-@linkColor: @theme-color-light-blue;
-@linkHoverColor: @theme-color-light-blue;
+@linkColor: @theme-color-blue;
+@linkHoverColor: @theme-color-blue;
 @linkUnderline: none;
 
 /*-------------------
