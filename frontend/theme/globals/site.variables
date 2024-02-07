@@ -34,6 +34,7 @@
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
 @theme-color-green: #2da55d;
+@theme-color-light-red: #f1b0bc;
 
 @primaryColor: @theme-color-yellow;
 @primaryText: #000000;
