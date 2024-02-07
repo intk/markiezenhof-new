@@ -34,10 +34,11 @@
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
 
-@primaryColor: @theme-color-yellow;
-@primaryText: #000000;
+@primaryColor: @theme-color-blue;
+@primaryText: #ffffff;
 @secondaryColor: @theme-color-purple;
 @secondaryText: #ffffff;
+@blackText: #000000;
 @footerColor: #df0934;
 @footerText: #ffffff;
 
