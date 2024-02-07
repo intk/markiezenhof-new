@@ -3,20 +3,20 @@
  * @module components/theme/Navigation/Navigation
  */
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { defineMessages, injectIntl } from 'react-intl';
-import cx from 'classnames';
-import { Container } from 'semantic-ui-react';
+import { getNavigation } from '@plone/volto/actions';
 import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import { getNavigation } from '@plone/volto/actions';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { Component } from 'react';
+import { defineMessages, injectIntl } from 'react-intl';
+import { connect } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
-import NavItems from './NavItems';
+import { compose } from 'redux';
+import { Container } from 'semantic-ui-react';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import SearchWidget from '../SearchWidget/SearchWidget';
+import NavItems from './NavItems';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -140,7 +140,7 @@ class Navigation extends Component {
         </div>
         <div className="hamburger-wrapper">
           <a
-            href="https://ticketshop.haagshistorischmuseum.nl"
+            href={`/${String(this.props.lang)}/tickets`}
             target="_blank"
             rel="noopener noreferrer"
             className="tickets-button"
