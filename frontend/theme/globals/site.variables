@@ -27,18 +27,21 @@
 @theme-color-red: #df0934;
 @theme-color-light-red: #f1b0bc;
 @theme-color-dark-blue: #103867;
+@theme-color-light-blue: #88c5d8;
 @theme-color-blue: #008da9;
 @theme-color-orange: #fce602;
 @theme-color-light-purple: #9789a5;
 @theme-color-purple: #92278f;
+@theme-color-white: #ffffff;
+@theme-color-black: #000000;
 
 @primaryColor: @theme-color-blue;
-@primaryText: #ffffff;
+@primaryText: @theme-color-white;
 @secondaryColor: @theme-color-purple;
-@secondaryText: #ffffff;
-@blackText: #000000;
-@footerColor: #df0934;
-@footerText: #ffffff;
+@secondaryText: @theme-color-white;
+@blackText: @theme-color-black;
+@footerColor: @theme-color-red;
+@footerText: @theme-color-white;
 
 @primaryDarker: @theme-color-blue;
 
