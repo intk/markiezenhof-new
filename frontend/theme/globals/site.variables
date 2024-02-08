@@ -1,9 +1,8 @@
 /*-------------------
        Fonts
 --------------------*/
-
-@fontName: 'Libre Franklin';
-@importGoogleFonts: true;
+@introHeaderFont: 'Intro Bold';
+@introPageFont: 'Intro Cond Regular';
 
 /*-------------------
       Base Sizes
@@ -61,8 +60,8 @@
 ---------------*/
 
 @headerFontWeight: 800;
-@headerFont: @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont: @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont: @introHeaderFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@pageFont: @introPageFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 @h1: 50px;
 @h2: 34px;
