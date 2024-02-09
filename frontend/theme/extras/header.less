@@ -146,14 +146,10 @@ body.has-hero-section.section-add {
     &:hover,
     &:focus,
     &:active {
-      border-color: #000;
-      background-color: #000;
-      color: #fff !important;
+      border-color: @theme-color-dark-red;
+      background-color: @theme-color-dark-red;
+      color: @theme-color-white !important;
       text-decoration: none !important;
-
-      // &::before {
-      //   border-right-color: #000000;
-      // }
     }
   }
 
@@ -273,7 +269,7 @@ nav.navigation {
         text-decoration: none !important;
 
         &.active {
-          color: #000 !important;
+          color: @theme-color-dark-gray !important;
         }
 
         span {
@@ -322,7 +318,7 @@ nav.navigation {
           font-weight: 400;
 
           &.active {
-            color: #000 !important;
+            color: @theme-color-dark-gray !important;
           }
         }
       }

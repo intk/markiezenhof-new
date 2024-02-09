@@ -22,10 +22,12 @@
 --------------------*/
 
 /*---  Colors  ---*/
-@theme-color-dark-gray: #5e5e5e;
+@theme-color-dark-gray: #2F2F2F;
 @theme-color-light-gray: #f5f5f5;
-@theme-color-red: #df0934;
+@theme-color-gray: #5e5e5e;
+@theme-color-dark-red: #a40000;
 @theme-color-light-red: #f1b0bc;
+@theme-color-red: #df0934;
 @theme-color-dark-blue: #005A76;
 @theme-color-light-blue: #88c5d8;
 @theme-color-blue: #008da9;
@@ -38,8 +40,7 @@
 @primaryColor: @theme-color-blue;
 @primaryText: @theme-color-white;
 @secondaryColor: @theme-color-white;
-@secondaryText: @theme-color-dark-gray;
-@blackText: @theme-color-black;
+@secondaryText: @theme-color-gray;
 @footerColor: @theme-color-red;
 @footerText: @theme-color-white;
 
