@@ -21,24 +21,24 @@ a.text-button.btn-block {
       border-color 0.3s ease;
 
     &.secondary {
-      border-color: @secondaryColor;
-      background-color: @secondaryColor;
-      color: @secondaryText;
+      border-color: @primaryColor;
+      background-color: @primaryColor;
+      color: @primaryText;
 
       &::after {
-        border-left-color: @secondaryColor;
+        border-left-color: @primaryColor;
       }
     }
 
     &:hover,
     &:focus {
-      border-color: #000;
-      background-color: #000;
-      color: #fff;
+      border-color: @theme-color-dark-blue;
+      background-color: @theme-color-dark-blue;
+      color: @primaryText;
       text-decoration: none;
 
       &::after {
-        border-left-color: #000;
+        border-left-color: @theme-color-dark-blue;
       }
     }
   }
