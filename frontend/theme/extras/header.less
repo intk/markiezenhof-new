@@ -107,6 +107,7 @@ body.has-hero-section.section-add {
   display: flex;
 
   a.tickets-button {
+    font-family: @headerFont;
     display: inline-block;
     height: 53px;
     padding: 7px 17px; //Original css
@@ -239,6 +240,8 @@ nav.navigation {
   display: flex;
   width: 100%;
   margin-left: auto;
+  font-family: @headerFont;
+  font-weight: 800;
 
   ul.nav-items {
     position: relative;
@@ -308,6 +311,7 @@ nav.navigation {
     &.nav-items-nested {
       flex-direction: column;
       margin-top: 1.5em;
+      font-family: @pageFont;
 
       li.item {
         width: 100%;
@@ -628,8 +632,8 @@ body.has-hero-image {
         }
 
         &.current {
+          font-family: @headerFont;
           background-color: #00aeef;
-
         }
       }
     }
@@ -667,15 +671,15 @@ body.has-hero-image {
           padding-right: 20px;
           padding-left: 20px;
           margin-top: 15px;
-          font-size: 37px;
-          line-height: 1.08;
+          font-size: 39px;
+          line-height: 0.88;
         }
       }
     }
 
     .hero-dates {
       color: #fff;
-      font-size: 21px;
+      font-size: 22px;
     }
 
     .herosection-content-image {

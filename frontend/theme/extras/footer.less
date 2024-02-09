@@ -65,16 +65,20 @@ footer.site-footer {
   }
 
   h3 {
+    font-family: @headerFont !important;
+    font-weight: 800 !important;
+    color: @theme-color-white !important;
+    letter-spacing: 0;
     margin-top: 0;
     margin-bottom: 12px;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 21px;
+    line-height: 1.025;
   }
 
   p {
     margin-bottom: 0;
-    font-size: 17px;
-    line-height: 1.88;
+    font-size: 19px;
+    line-height: 1.85;
   }
 
   .social-header {
@@ -86,12 +90,12 @@ footer.site-footer {
       display: inline-block;
       margin-right: 1em;
       margin-bottom: 0.5em;
-      font-size: 16px;
+      font-size: 11px;
       opacity: 1;
       text-decoration: none !important;
 
       i {
-        font-size: 1.75rem;
+        font-size: 1.2725rem;
       }
 
       &:hover,
@@ -123,9 +127,9 @@ footer.site-footer {
       box-shadow: none;
       color: @primaryText;
       cursor: pointer;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
-      line-height: 1.7;
+      line-height: 1.5;
       text-decoration: none !important;
       text-shadow: none;
       text-transform: none !important;
@@ -139,9 +143,9 @@ footer.site-footer {
       &:hover,
       &:focus,
       &:active:focus {
-        border-color: #fff !important;
-        background-color: #fff;
-        color: #000 !important;
+        border-color: @theme-color-dark-blue !important;
+        background-color: @theme-color-dark-blue;
+        color: @theme-color-white !important;
         opacity: 1;
         text-decoration: none !important;
 

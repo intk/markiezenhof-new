@@ -3,23 +3,25 @@
  * @module components/theme/Search/Search
  */
 
-import React, { Component } from 'react';
+import { searchContent } from '@plone/volto/actions';
+import { Icon, Toolbar, UniversalLink } from '@plone/volto/components';
+import { Helmet, asyncConnect } from '@plone/volto/helpers';
+import config from '@plone/volto/registry';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import qs from 'query-string';
+import { Component } from 'react';
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { Portal } from 'react-portal';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { UniversalLink } from '@plone/volto/components';
-import { asyncConnect } from '@plone/volto/helpers';
-import { FormattedMessage } from 'react-intl';
-import { Portal } from 'react-portal';
-import { Container, Pagination, Button, Header } from 'semantic-ui-react';
-import qs from 'query-string';
-import classNames from 'classnames';
-import { defineMessages, injectIntl } from 'react-intl';
-import config from '@plone/volto/registry';
-import { Helmet } from '@plone/volto/helpers';
-import { searchContent } from '@plone/volto/actions';
-import { Toolbar, Icon } from '@plone/volto/components';
-import { Input } from 'semantic-ui-react';
+import {
+  Button,
+  Container,
+  Header,
+  Input,
+  Pagination,
+} from 'semantic-ui-react';
 
 import paginationLeftSVG from '@plone/volto/icons/left-key.svg';
 import paginationRightSVG from '@plone/volto/icons/right-key.svg';

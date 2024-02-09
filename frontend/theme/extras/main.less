@@ -250,13 +250,11 @@ h1.documentFirstHeading {
   p {
     margin: 0 0 30px;
     color: @textColor;
-    font-size: 21px;
-    line-height: 1.714;
-
-    @media (max-width: 991px) {
-      font-size: 19px;
-      line-height: 1.68;
-    }
+    font-weight: 500;
+    letter-spacing: 1.1px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ol,
@@ -274,6 +272,9 @@ h1.documentFirstHeading {
 
   ul {
     li {
+      font-size: 22px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       &::marker {
         color: @theme-color-dark-gray;
       }
@@ -391,6 +392,16 @@ h3 {
     margin-top: 55px;
     margin-bottom: 15px;
   }
+}
+
+h2,
+h3 {
+  font-family: @contentTitleFont !important;
+  font-weight: 400 !important;
+  letter-spacing: 1.7px;
+  color: #4c4c4c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 h4,
