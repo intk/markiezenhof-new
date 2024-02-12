@@ -1,6 +1,6 @@
 import installBlocks from './components/blocks';
-import MultipleContentView from './components/theme/View/MultipleContentView';
 import ListingView from './components/theme/View/ListingView';
+import MultipleContentView from './components/theme/View/MultipleContentView';
 
 import TagManager from 'react-gtm-module';
 
@@ -14,7 +14,7 @@ const tagManagerArgs = {
 __CLIENT__ && !__DEVELOPMENT__ && TagManager.initialize(tagManagerArgs);
 
 export default function applyConfig(config) {
-  const DEFAULT_LANG = 'en';
+  const DEFAULT_LANG = 'nl';
 
   if (__DEVELOPMENT__) {
     config.settings.apiPath = 'http://localhost:8080/Plone';
