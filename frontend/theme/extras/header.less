@@ -110,8 +110,7 @@ body.has-hero-section.section-add {
     font-family: @headerFont;
     display: inline-block;
     height: 53px;
-    padding: 7px 17px; //Original css
-    // padding: 7px 17px 7px 61px;
+    padding: 7px 17px;
     border: 2px solid @theme-color-red;
     background-color: @theme-color-red;
     border-radius: 0;
@@ -128,16 +127,6 @@ body.has-hero-section.section-add {
     @media (max-width: 991px) {
       padding: 7px 10px;
     }
-
-    // &::before {
-    //   position: absolute;
-    //   top: 0;
-    //   left: -44px;
-    //   border-top: 53px solid transparent;
-    //   border-right: 44px solid #fce602;
-    //   content: '';
-    //   transition: border-color 0.3s ease-in-out;
-    // }
 
     &::before{
       display: none !important;
@@ -609,8 +598,8 @@ body.has-hero-image {
         padding-right: 20px;
         padding-left: 20px;
         margin-bottom: 15px;
-        background-color: #f58220;
-        color: #ffffff;
+        background-color: @eventTagBackgroundColor;
+        color: @eventTagTextColor;
         font-size: 22px;
         font-weight: 700;
         line-height: 50px;
@@ -620,16 +609,16 @@ body.has-hero-image {
         }
 
         &.future {
-          background-color: #92278f;
+          background-color: @eventTagBackgroundColor;
 
           &:after {
-            border-left: 44px solid #92278f;
+            border-left: 44px solid @eventTagBackgroundColor;
           }
         }
 
         &.current {
           font-family: @headerFont;
-          background-color: #00aeef;
+          background-color: @eventTagBackgroundColor;
         }
       }
     }

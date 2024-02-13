@@ -31,9 +31,6 @@
 @theme-color-dark-blue: #005A76;
 @theme-color-light-blue: #88c5d8;
 @theme-color-blue: #008da9;
-@theme-color-orange: #fce602;
-@theme-color-light-purple: #9789a5;
-@theme-color-purple: #92278f;
 @theme-color-white: #ffffff;
 @theme-color-black: #000000;
 
@@ -43,6 +40,9 @@
 @secondaryText: @theme-color-gray;
 @footerColor: @theme-color-red;
 @footerText: @theme-color-white;
+
+@eventTagBackgroundColor: @theme-color-red;
+@eventTagTextColor: @theme-color-white;
 
 @primaryDarker: @theme-color-blue;
 
