@@ -1,6 +1,7 @@
 import installBlocks from './components/blocks';
 import ListingView from './components/theme/View/ListingView';
 import MultipleContentView from './components/theme/View/MultipleContentView';
+import modifiedPanelConfig from './cookieOptions';
 
 import TagManager from 'react-gtm-module';
 
@@ -56,13 +57,17 @@ export default function applyConfig(config) {
   };
 
   config.settings['volto-gdpr-privacy'].defaultPanelConfig = {
-    ...config.settings['volto-gdpr-privacy'].defaultPanelConfig,
-    last_updated: '2022-12-10T00:07:00+00:00',
+    ...modifiedPanelConfig,
     text: {
       en: {
         title: 'This site uses cookies',
         description:
           'For this website we use cookies for anonymous analytics gathering and show external content. You can also enable third parties independently.',
+      },
+      nl: {
+        title: 'Deze site gebruikt cookies',
+        description:
+          'Voor deze website gebruiken we cookies voor anonieme statistieken en het tonen van externe content. U kunt ook onafhankelijk derden inschakelen.',
       },
     },
     technical: {
@@ -71,6 +76,11 @@ export default function applyConfig(config) {
           title: 'Required cookies',
           description:
             'This website uses cookies for visitor analytics and login functionality. No personal identifiable information is collected or exchanged with third parties.',
+        },
+        nl: {
+          title: 'Noodzakelijke cookies',
+          description:
+            'Deze website gebruikt cookies voor bezoekersstatistieken en login functionaliteit. Er wordt geen persoonlijke informatie verzameld of gedeeld met derden.',
         },
       },
       choices: [],
@@ -82,10 +92,14 @@ export default function applyConfig(config) {
           description:
             'To show rich content from other websites we use integrations from third parties. These might set cookies and collect personal data that can be used for profiling purposes across websites. You can disable individual services below.',
         },
+        nl: {
+          title: 'Derde partij integraties',
+          description:
+            'Om rijke content van andere websites te tonen gebruiken we integraties van derden. Deze kunnen cookies instellen en persoonlijke data verzamelen die gebruikt kan worden voor profilering over websites heen. U kunt individuele services hieronder uitschakelen.',
+        },
       },
       choices: [
-        ...config.settings['volto-gdpr-privacy'].defaultPanelConfig.profiling
-          .choices,
+        ...modifiedPanelConfig.profiling.choices,
         {
           config_key: 'GTAG',
           text: {
@@ -93,6 +107,11 @@ export default function applyConfig(config) {
               title: 'Google Tag Manager',
               description:
                 'Google Tag Manager is a tag management system that allows you to manage and deploy marketing tags (snippets of code or tracking pixels) on your website. Google Tag Manager does not collect any personal data.',
+            },
+            nl: {
+              title: 'Google Tag Manager',
+              description:
+                'Google Tag Manager is een tag management systeem dat u in staat stelt om marketing tags (stukjes code of tracking pixels) te beheren en implementeren op uw website. Google Tag Manager verzamelt geen persoonlijke data.',
             },
           },
         },

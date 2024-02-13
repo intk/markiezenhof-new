@@ -41,7 +41,7 @@
 @footerColor: @theme-color-red;
 @footerText: @theme-color-white;
 
-@eventTagBackgroundColor: @theme-color-red;
+@eventTagBackgroundColor: @theme-color-blue;
 @eventTagTextColor: @theme-color-white;
 
 @primaryDarker: @theme-color-blue;
