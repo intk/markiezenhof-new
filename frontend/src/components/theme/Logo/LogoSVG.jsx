@@ -6,7 +6,9 @@ function Logo(props) {
       id="logo"
       x="0"
       y="0"
-      viewBox="30 15 300 90"
+      // viewBox="30 15 300 90"
+      // viewBox="15 10 320 70"
+      viewBox="0 0 350 90"
       xmlSpace="preserve"
       {...props}
     >

@@ -17,13 +17,18 @@
     z-index: 5;
     width: 100%;
     box-sizing: border-box;
-    padding: 30px 15px;
+    padding: 45.5px 30.608px;
+
+    @media (max-width: 991px) {
+      padding: 20.5px 17.380px;
+    }
 
     .logo {
-      padding: 0 15px;
+      // padding: 0 15px;
+      // padding: 0px 10px;
 
       @media (max-width: 991px) {
-        padding: 0;
+        // padding: 17.380px;
       }
 
       a.site-logo {
@@ -32,16 +37,19 @@
 
       svg,
       img {
-        width: auto;
-        height: 80px;
+        // padding: 10px 0;
+        width: 16.165rem;
+        // width: 15.2rem;
+        height: auto;
 
         @media (max-width: 464px) {
-          margin-top: 5px;
-          height: 70px;
+          // margin-top: 5px;
+          // height: 70px;
         }
       }
 
       svg {
+        background-color: @theme-color-red;
         color: @theme-color-black;
       }
     }
@@ -95,10 +103,9 @@ body.has-hero-section.section-add {
   }
 
   .right-section {
-    padding: 10px 25px;
+    padding: 0 17.380px;
 
     @media (max-width: 991px) {
-      padding: 0 10px;
     }
   }
 }
@@ -109,7 +116,7 @@ body.has-hero-section.section-add {
   a.tickets-button {
     font-family: @headerFont;
     display: inline-block;
-    height: 53px;
+    height: 66.5px;
     padding: 7px 17px;
     border: 2px solid @theme-color-red;
     background-color: @theme-color-red;
@@ -118,14 +125,14 @@ body.has-hero-section.section-add {
     color: #ffffff !important;
     font-size: 22px;
     font-weight: 600;
-    line-height: 1.7;
+    line-height: 2.2;
     text-shadow: none;
     text-transform: none;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
       border-color 0.3s ease-in-out !important;
 
     @media (max-width: 991px) {
-      padding: 7px 10px;
+      // padding: 7px 10px;
     }
 
     &::before{
@@ -144,11 +151,13 @@ body.has-hero-section.section-add {
 
   button.hamburger {
     width: 64px;
-    height: 53px;
+    // height: 53px;
+    height: 66.5px;
+    text-align: center;
 
     @media (max-width: 991px) {
-      height: 53px;
-      padding: 15px 10px;
+      height: 66.5px;
+      // padding: 15px 10px;
     }
 
     &:hover,
@@ -158,7 +167,7 @@ body.has-hero-section.section-add {
 
     .hamburger-box {
       width: 35px;
-      height: 25px;
+      height: 35px;
 
       @media (max-width: 991px) {
         width: 30px;
@@ -170,10 +179,6 @@ body.has-hero-section.section-add {
         &::after {
           width: 35px;
           background-color: #ffffff;
-
-          @media (max-width: 991px) {
-            width: 30px;
-          }
         }
       }
     }
