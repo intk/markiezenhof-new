@@ -34,6 +34,8 @@
 @theme-color-white: #ffffff;
 @theme-color-black: #000000;
 
+@highlightColor: #f5f5f5;
+@highlightText: #4c4c4c;
 @primaryColor: @theme-color-blue;
 @primaryText: @theme-color-white;
 @secondaryColor: @theme-color-white;

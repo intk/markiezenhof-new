@@ -5,7 +5,18 @@
   justify-content: center;
   margin-top: -1rem;
   margin-bottom: 3rem;
-  background-color: @primaryColor;
+  background-color: @highlightColor;
+
+  .rightarrow {
+    @media (min-width: 992px) {
+      position: absolute;
+      left: 0;
+      margin: 10.5px 0 10.5px 7px;
+      width: 30px;
+      height: 80px;
+      background: url(../../../src/customizations/components/theme/RightArrow/right-arrow.svg);
+    }
+  }
 
   &:not(.edit-mode) {
     min-height: 70px;
@@ -26,7 +37,9 @@
     padding-top: 30px;
     padding-bottom: 30px;
     margin: 0;
-    color: @primaryText;
+    color: @highlightText;
+    font-family: @contentTitleFont;
+    letter-spacing: 1.2px !important;
     font-size: 24px;
     line-height: 1.714;
     text-align: left;
@@ -36,9 +49,9 @@
     }
 
     a {
-      border-bottom: 2px solid @primaryText !important;
+      border-bottom: 2px solid @highlightText !important;
       margin-left: 0px !important;
-      color: @primaryText !important;
+      color: @highlightText !important;
       text-decoration: none !important;
 
       &:hover,

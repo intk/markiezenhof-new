@@ -1,6 +1,6 @@
+import { TextBlockEdit, TextBlockView } from '@plone/volto-slate/blocks/Text';
 import alertSVG from '@plone/volto/icons/alert.svg';
 import { Container } from 'semantic-ui-react';
-import { TextBlockView, TextBlockEdit } from '@plone/volto-slate/blocks/Text';
 
 const installTextHighlightBlock = (config) => {
   config.blocks.blocksConfig.textHighlight = {
@@ -11,12 +11,14 @@ const installTextHighlightBlock = (config) => {
     view: (props) => (
       <div className="block full-width text-highlight">
         <Container>
-          <TextBlockView {...props} />
+          <div className="rightarrow" />
+          <TextBlockView className="rightarrow" {...props} />
         </Container>
       </div>
     ),
     edit: (props) => (
       <div className="block edit-mode text-highlight">
+        <div className="rightarrow" />
         <TextBlockEdit {...props} />
       </div>
     ),
