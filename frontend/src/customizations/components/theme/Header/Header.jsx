@@ -1,16 +1,15 @@
 // Customized to use the HeroSection
-
-import React from 'react';
-import { InView } from 'react-intersection-observer';
-import { useSelector } from 'react-redux';
+import HeroSection from '@package/components/theme/Header/HeroSection'; // , StickyHeader
 import { Logo, Navigation } from '@plone/volto/components';
 import { BodyClass, isCmsUi } from '@plone/volto/helpers';
-import HeroSection from '@package/components/theme/Header/HeroSection'; // , StickyHeader
 import cx from 'classnames';
-import { useIntl } from 'react-intl';
-import usePreviewImage from './usePreviewImage';
-import { useLocation } from 'react-router-dom';
 import qs from 'query-string';
+import React, { useEffect, useState } from 'react';
+import { InView } from 'react-intersection-observer';
+import { useIntl } from 'react-intl';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import usePreviewImage from './usePreviewImage';
 
 const Header = (props) => {
   const { navigationItems } = props;
@@ -30,6 +29,19 @@ const Header = (props) => {
   const cmsView = isCmsUi(pathname);
   const homePageView = isHomePage && !cmsView && !isSearch;
   const [inView, setInView] = React.useState();
+  const [smallLogo, setSmallLogo] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(min-width: 768px)');
+      const handler = (e) => setSmallLogo(e.matches);
+
+      setSmallLogo(mediaQuery.matches);
+      mediaQuery.addEventListener('change', handler);
+
+      return () => mediaQuery.removeEventListener('change', handler);
+    }
+  }, []);
 
   return (
     <div className="portal-top">
@@ -54,7 +66,7 @@ const Header = (props) => {
             }`}
           >
             <div className="logo">
-              <Logo />
+              <Logo smallLogo={!smallLogo} />
             </div>
 
             <div className="right-section">

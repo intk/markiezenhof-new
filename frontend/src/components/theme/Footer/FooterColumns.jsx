@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react';
+import NewsletterSubscribe from '@package/components/theme/Footer/NewsletterSubscribe';
+import { ConditionalLink, Logo } from '@plone/volto/components';
+import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { flattenHTMLToAppURL, flattenToAppURL } from '@plone/volto/helpers';
-import { ConditionalLink, Logo } from '@plone/volto/components';
-import NewsletterSubscribe from '@package/components/theme/Footer/NewsletterSubscribe';
-import { SocialLinks } from 'volto-social-settings';
 import { getEditableFooterColumns } from 'volto-editablefooter/actions';
 import { getItemsByPath } from 'volto-editablefooter/utils';
+import { SocialLinks } from 'volto-social-settings';
 
 const FooterColumns = ({ footer }) => {
   const location = useLocation();
@@ -29,7 +29,7 @@ const FooterColumns = ({ footer }) => {
   return (
     <div className="footer-columns">
       <div className="column">
-        <Logo />
+        <Logo smallLogo={false} />
       </div>
       {footerColumns
         .filter((c) => c.visible)

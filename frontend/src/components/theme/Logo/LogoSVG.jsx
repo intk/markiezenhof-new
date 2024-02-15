@@ -1,4 +1,4 @@
-function Logo(props) {
+export function LogoSVG(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,8 +6,6 @@ function Logo(props) {
       id="logo"
       x="0"
       y="0"
-      // viewBox="30 15 300 90"
-      // viewBox="15 10 320 70"
       viewBox="0 0 350 90"
       xmlSpace="preserve"
       {...props}
@@ -31,5 +29,3 @@ function Logo(props) {
     </svg>
   );
 }
-
-export default Logo;

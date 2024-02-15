@@ -3,11 +3,12 @@
  * @module components/theme/Logo/Logo
  */
 
+import { LogoSVG } from '@package/components/theme/Logo/LogoSVG';
+import { SmallLogoSVG } from '@package/components/theme/SmallLogo/SmallLogoSVG';
+import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
 import { defineMessages, useIntl } from 'react-intl';
 import { useSelector } from 'react-redux';
-import config from '@plone/volto/registry';
-import { UniversalLink } from '@plone/volto/components';
-import LogoSVG from '@package/components/theme/Logo/LogoSVG';
 
 const messages = defineMessages({
   site: {
@@ -26,12 +27,21 @@ const messages = defineMessages({
  * @param {Object} intl Intl object
  * @returns {string} Markup of the component.
  */
-const Logo = () => {
+const Logo = (props) => {
+  const { smallLogo } = props || false;
   const { settings } = config;
   const lang = useSelector((state) => state.intl.locale);
   const intl = useIntl();
 
-  return (
+  return smallLogo === true ? (
+    <UniversalLink
+      className="site-logo small-logo"
+      href={settings.isMultilingual ? `/${lang}` : '/'}
+      title={intl.formatMessage(messages.site)}
+    >
+      <SmallLogoSVG title={intl.formatMessage(messages.plonesite)} />
+    </UniversalLink>
+  ) : (
     <UniversalLink
       className="site-logo"
       href={settings.isMultilingual ? `/${lang}` : '/'}
