@@ -11745,7 +11745,7 @@ __metadata:
     stylelint-prettier: 1.1.2
     volto-editablefooter: 5.0.1
     volto-form-block: 3.0.1
-    volto-gdpr-privacy: 2.0.0
+    volto-gdpr-privacy: "github:RaneHyv/volto-gdpr-privacy"
     volto-social-settings: 3.0.0
   languageName: unknown
   linkType: soft
@@ -24161,12 +24161,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"volto-gdpr-privacy@npm:2.0.0":
+"volto-gdpr-privacy@github:RaneHyv/volto-gdpr-privacy":
   version: 2.0.0
-  resolution: "volto-gdpr-privacy@npm:2.0.0"
+  resolution: "volto-gdpr-privacy@https://github.com/RaneHyv/volto-gdpr-privacy.git#commit=35c036c0ad7212fba5be3163a7aa0545f36113c6"
   peerDependencies:
     "@plone/volto": ">=16.0.0-alpha.38"
-  checksum: 1b3977377fa7d23ee9f2d78f8eb10c28ec305a889f2f3457e665999987a130c224658a1c63da270b29d6f94701856289c80a1910244ca1597fe7e63cf3fca228
+  checksum: e51aaebdac9bbf078266e16c545315e37b1a081b1abfb6241792ff1918aafc72e279084a7257850b97f1206832a85a105dba80e4c022b1faf0b1d8309ccc3e17
   languageName: node
   linkType: hard
 

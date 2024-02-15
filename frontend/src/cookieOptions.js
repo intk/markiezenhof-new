@@ -1,5 +1,5 @@
 const modifiedPanelConfig = {
-  last_updated: '2024-01-11T10:36:28+00:00', //it is used to know whether to resubmit the banner to the user if the choices have changed.
+  last_updated: '2024-02-01T10:36:28+00:00', //it is used to know whether to resubmit the banner to the user if the choices have changed.
   // focusTrapEnabled: false,
   text: {
     //Text that is shown when the banner appears
@@ -218,6 +218,31 @@ const modifiedPanelConfig = {
             //text to show in conditional embed if that cookies are not enabled
             conditional_embed_text:
               'Om de kaart te bekijken, accepteert u de cookies van Google Maps.',
+          },
+        },
+      },
+      {
+        config_key: 'GTAG',
+        text: {
+          it: {
+            title: 'Google Tag Manager',
+            description:
+              'Google Tag Manager è un sistema di gestione dei tag che consente di gestire e distribuire tag di marketing (snippet di codice o pixel di tracciamento) sul sito. Google Tag Manager non raccoglie dati personali.',
+          },
+          en: {
+            title: 'Google Tag Manager',
+            description:
+              'Google Tag Manager is a tag management system that allows you to manage and deploy marketing tags (snippets of code or tracking pixels) on your website. Google Tag Manager does not collect any personal data.',
+          },
+          fr: {
+            title: 'Google Tag Manager',
+            description:
+              'Google Tag Manager est un système de gestion de balises qui vous permet de gérer et de déployer des balises marketing (extraits de code ou pixels de suivi) sur votre site. Google Tag Manager ne collecte aucune donnée personnelle.',
+          },
+          nl: {
+            title: 'Google Tag Manager',
+            description:
+              'Google Tag Manager is een tag management systeem dat u in staat stelt om marketing tags (stukjes code of tracking pixels) te beheren en implementeren op uw website. Google Tag Manager verzamelt geen persoonlijke data.',
           },
         },
       },
