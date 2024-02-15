@@ -27,6 +27,7 @@
   "addons": [
     "@eeacms/volto-accordion-block",
     "@kitconcept/volto-blocks-grid",
+    "@kitconcept/volto-slider-block",
     "volto-form-block",
     "volto-editablefooter",
     "volto-social-settings",
@@ -144,6 +145,7 @@
     "@eeacms/volto-accordion-block": "*",
     "@fontsource/libre-franklin": "4.5.11",
     "@kitconcept/volto-blocks-grid": "*",
+    "@kitconcept/volto-slider-block": "*",
     "@plone/volto": "16.20.4",
     "react-gtm-module": "2.0.11",
     "volto-editablefooter": "5.0.1",

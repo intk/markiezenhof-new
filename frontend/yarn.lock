@@ -2459,6 +2459,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kitconcept/volto-slider-block@npm:*":
+  version: 6.1.1
+  resolution: "@kitconcept/volto-slider-block@npm:6.1.1"
+  dependencies:
+    deepmerge: 4.2.2
+    embla-carousel-react: ^8.0.0-rc15
+  peerDependencies:
+    "@plone/volto": ^17.0.0-alpha.21
+  checksum: e5a81af1df855333d6bf69649f620e75bd57a6b5a5a91c4e70e89fd9c2b9996b7a4d39229f39c4c60e785bc5a1efb1c224a9e078b85da1d1bcc6b71c8812e7dc
+  languageName: node
+  linkType: hard
+
 "@kwsites/file-exists@npm:^1.1.1":
   version: 1.1.1
   resolution: "@kwsites/file-exists@npm:1.1.1"
@@ -9176,6 +9188,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deepmerge@npm:4.2.2":
+  version: 4.2.2
+  resolution: "deepmerge@npm:4.2.2"
+  checksum: a8c43a1ed8d6d1ed2b5bf569fa4c8eb9f0924034baf75d5d406e47e157a451075c4db353efea7b6bcc56ec48116a8ce72fccf867b6e078e7c561904b5897530b
+  languageName: node
+  linkType: hard
+
 "deepmerge@npm:^1.5.2":
   version: 1.5.2
   resolution: "deepmerge@npm:1.5.2"
@@ -9916,6 +9935,34 @@ __metadata:
     minimalistic-assert: ^1.0.1
     minimalistic-crypto-utils: ^1.0.1
   checksum: d56d21fd04e97869f7ffcc92e18903b9f67f2d4637a23c860492fbbff5a3155fd9ca0184ce0c865dd6eb2487d234ce9551335c021c376cd2d3b7cb749c7d10f4
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^8.0.0-rc15":
+  version: 8.0.0-rc22
+  resolution: "embla-carousel-react@npm:8.0.0-rc22"
+  dependencies:
+    embla-carousel: 8.0.0-rc22
+    embla-carousel-reactive-utils: 8.0.0-rc22
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: e357573c5dd4e7817c413231930e0e371a5884bdbcc0d8db3032b4b90b3e825507a1ec7b0d92cba949deacb00f7c5f9bd4a2480b0472f8c041042fdb17f42587
+  languageName: node
+  linkType: hard
+
+"embla-carousel-reactive-utils@npm:8.0.0-rc22":
+  version: 8.0.0-rc22
+  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc22"
+  peerDependencies:
+    embla-carousel: 8.0.0-rc22
+  checksum: 9bd81e218ce14939b01694b2c68316c0852656fd1ff558288fed6a995a57856f4f9e0dd9be6c6684d17246f6f87a8b89e1d4a4344c7d3e3ce1ae79034bd40e3c
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:8.0.0-rc22":
+  version: 8.0.0-rc22
+  resolution: "embla-carousel@npm:8.0.0-rc22"
+  checksum: 693a1238d3a460e2f99fbc0bf693fa8475be17eb2760f5c2575026d7499696dcabfe9ddd56254170dfede9acfbea856ac46d63289a60d0efb12cb8ab42b561b8
   languageName: node
   linkType: hard
 
@@ -11677,6 +11724,7 @@ __metadata:
     "@eeacms/volto-accordion-block": "*"
     "@fontsource/libre-franklin": 4.5.11
     "@kitconcept/volto-blocks-grid": "*"
+    "@kitconcept/volto-slider-block": "*"
     "@plone/scripts": ^2.1.5
     "@plone/volto": 16.20.4
     "@storybook/addon-actions": ^6.3.0
