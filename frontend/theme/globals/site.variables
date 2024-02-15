@@ -4,6 +4,7 @@
 @introHeaderFont: 'IntroBold';
 @introPageFont: 'IntroCondRegular';
 @introHeadBFont: 'IntroHeadBBase';
+@introCondBoldFont: 'IntroCondBold';
 
 /*-------------------
       Base Sizes
@@ -67,6 +68,7 @@
 @headerFont: @introHeaderFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @pageFont: @introPageFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 @contentTitleFont: @introHeadBFont, @introPageFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@menuTitleFont: @introCondBoldFont, @introPageFont, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 @h1: 50px;
 @h2: 34px;
