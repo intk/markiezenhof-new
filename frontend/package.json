@@ -26,6 +26,7 @@
   },
   "addons": [
     "@eeacms/volto-accordion-block",
+    "@eeacms/volto-block-image-cards",
     "@kitconcept/volto-blocks-grid",
     "@kitconcept/volto-slider-block",
     "volto-form-block",
@@ -143,6 +144,7 @@
   },
   "dependencies": {
     "@eeacms/volto-accordion-block": "*",
+    "@eeacms/volto-block-image-cards": "*",
     "@fontsource/libre-franklin": "4.5.11",
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-slider-block": "*",
