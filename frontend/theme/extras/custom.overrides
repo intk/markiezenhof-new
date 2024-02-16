@@ -4,3 +4,4 @@
 @import url('search.less');
 
 @import url('blocks.less');
+@import url('imageCards.less');
