@@ -1,10 +1,11 @@
+import { compose } from 'redux';
+import installImageCardsBlock from '../../customizations/@eeacms/volto-block-image-cards';
+import installBreakBlock from './Break';
 import installButtonBlock from './Button';
 import installImageBlock from './Image';
-import installBreakBlock from './Break';
 import installListingBlock from './Listing';
 import installTeaserBlock from './Teaser';
 import installTextHighlightBlock from './TextHighlight';
-import { compose } from 'redux';
 
 import HeroView from './Hero/HeroView';
 
@@ -18,6 +19,7 @@ const installBlocks = (config) => {
     installBreakBlock,
     installTeaserBlock,
     installTextHighlightBlock,
+    installImageCardsBlock,
   )(config);
 };
 

@@ -11,6 +11,9 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import usePreviewImage from './usePreviewImage';
 
+// TODO: Add the mandatory categories for the carousel
+const mandatoryCarouselPageCategories = [];
+
 const Header = (props) => {
   const { navigationItems } = props;
   const intl = useIntl();
@@ -28,6 +31,8 @@ const Header = (props) => {
   const isSearch = pathname === '/search';
   const cmsView = isCmsUi(pathname);
   const homePageView = isHomePage && !cmsView && !isSearch;
+  const isHeroPage = mandatoryCarouselPageCategories.includes(contentType);
+  const heroPageView = isHeroPage && !cmsView && !isSearch;
   const [inView, setInView] = React.useState();
   const [smallLogo, setSmallLogo] = useState(false);
 
@@ -46,8 +51,9 @@ const Header = (props) => {
   return (
     <div className="portal-top">
       {homePageView && <BodyClass className="homepage-view" />}
+      {heroPageView && <BodyClass className="hero-view" />}
       {!cmsView && !isSearch && <BodyClass className="has-image" />}
-      {!((cmsView && isSearch) || isHomePage) && (
+      {!((cmsView && isSearch) || isHomePage || isHeroPage) && (
         <BodyClass className="has-hero-section" />
       )}
       {isSearch && <BodyClass className="has-hero-section" />}
@@ -84,7 +90,7 @@ const Header = (props) => {
         {' '}
       </InView>
 
-      {!((cmsView && !isSearch) || isHomePage) && (
+      {!((cmsView && !isSearch) || isHomePage || isHeroPage) && (
         <div className="header-bg">
           <div className="header-container">
             <HeroSection image_url={previewImageUrl} content={content} />
