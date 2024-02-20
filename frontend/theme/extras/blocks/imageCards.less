@@ -1,10 +1,112 @@
 & {
+  .no-slides.title {
+    font-size: 37px;
+    margin-bottom: 0;
+
+    @media (min-width: 992px){
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+  .hero.description-container {
+    background: @primaryColor;
+    color: @primaryText;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    padding: 100px 0 75px;
+
+    &::before {
+      display: none !important;
+    }
+
+    p.content-description {
+      margin-bottom: 0.6em;
+      font-family: @pageFont;
+      color: @primaryText;
+      font-size: 33px;
+      font-weight: 800;
+      line-height: 1.5;
+      text-align: left;
+    }
+  }
+
+  #no-slides {
+    padding-bottom: 62px;
+  }
+
   .slider-wrapper {
     .slider-slide {
+      .hero.slide-overlay {
+        background: transparent;
+      }
+      .hero.slider-caption{
+        padding-right: 70px;
+        padding-left: 70px;
+        margin: 0 !important;
+      }
       .slide-body {
+        .hero.event-label {
+          span {
+            position: relative;
+            display: inline-block;
+            width: auto;
+            height: 50px;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            background-color: @eventTagBackgroundColor;
+            color: @eventTagTextColor;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 50px;
+
+            &:after {
+              display: none !important;
+            }
+
+            &.future {
+              background-color: @eventTagBackgroundColor;
+
+              &:after {
+                border-left: 44px solid @eventTagBackgroundColor;
+              }
+            }
+
+            &.current {
+              font-family: @headerFont;
+              background-color: @eventTagBackgroundColor;
+            }
+          }
+        }
+        .hero.slide-title{
+          margin-bottom: 0;
+          font-weight: 800;
+          font-family: @headerFont;
+          font-size: 80px;
+          line-height: 80px;
+          padding: 0 20px;
+          margin-top: 0;
+          margin-bottom: 10px;
+
+          @media (max-width: 992px) {
+            font-size: 39px;
+            line-height: 34.32px;
+            margin-top: 15px;
+          }
+        }
+        .hero.page.slide-title {
+          padding: 0 !important;
+        }
+
         .slide-description,
         .slide-description > p {
           color: @theme-color-white;
+          font-family: @pageFont;
+        }
+        .hero.slide-description{
+          font-size: 22px;
+          line-height: 33px;
         }
       }
     }

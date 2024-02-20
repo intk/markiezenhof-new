@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 import usePreviewImage from './usePreviewImage';
 
 // TODO: Add the mandatory categories for the carousel
-const mandatoryCarouselPageCategories = [];
+const mandatoryCarouselPageCategories = ['Document', 'Event'];
 
 const Header = (props) => {
   const { navigationItems } = props;

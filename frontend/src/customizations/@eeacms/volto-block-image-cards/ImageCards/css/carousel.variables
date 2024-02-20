@@ -1,4 +1,4 @@
-@sliderWrapperHeight: 600px;
+@sliderWrapperHeight: 1500px;
 @sliderWrapperMobileHeight: 450px;
 
 @slideOverlayBackground: #000;

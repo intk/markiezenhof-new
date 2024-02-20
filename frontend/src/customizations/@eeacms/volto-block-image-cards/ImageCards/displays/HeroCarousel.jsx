@@ -6,8 +6,9 @@ import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import cx from 'classnames';
-import React from 'react';
-import { Message } from 'semantic-ui-react';
+import React, { useEffect, useState } from 'react';
+import { defineMessages, useIntl } from 'react-intl';
+import { Container, Message } from 'semantic-ui-react';
 
 import leftSVG from '@plone/volto/icons/left-key.svg';
 import rightSVG from '@plone/volto/icons/right-key.svg';
@@ -16,14 +17,104 @@ import '../css/carousel.less';
 
 const Slider = loadable(() => import('react-slick'));
 
+const noSlidesBlock = (title, description) => {
+  return (
+    <div className="herosection">
+      <h1 className="title no-slides">{title}</h1>
+      {description && (
+        <div className="description-container no-slides">
+          <p id="no-slides" className="content-description no-slides">
+            {description}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const messages = defineMessages({
+  pastExibition: {
+    id: 'Past exhibition',
+    defaultMessage: 'Past exhibition',
+  },
+  nowOnDisplay: {
+    id: 'Now on display',
+    defaultMessage: 'Now on display',
+  },
+  future: {
+    id: 'Future',
+    defaultMessage: 'Future',
+  },
+});
+
+const getDateRangeDescription = (lang, start, end) => {
+  if (
+    !end ||
+    (start.getMonth() === end.getMonth() &&
+      start.getFullYear() === end.getFullYear() &&
+      start.getDate() === end.getDate())
+  ) {
+    return new Intl.DateTimeFormat(lang, {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(start);
+  }
+
+  if (
+    start.getMonth() === end.getMonth() &&
+    start.getFullYear() === end.getFullYear()
+  ) {
+    return `${new Intl.DateTimeFormat(lang, {
+      day: 'numeric',
+    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
+      lang,
+      {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      },
+    ).format(end)}`;
+  }
+
+  return `${new Intl.DateTimeFormat(lang, {
+    day: 'numeric',
+    month: 'short',
+  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
+    lang,
+    {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    },
+  ).format(end)}`;
+};
+
 const Arrows = (props) => {
   const { slider = {} } = props;
+  const [size, setSize] = useState('40px');
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 469) {
+        setSize('0px');
+      } else {
+        setSize('20px');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="slider-arrow">
       <div className="ui container">
         <button
           className="left-arrow"
+          style={{ padding: size }}
           aria-label="Prev Slide"
           onClick={() => {
             if (slider.current) {
@@ -31,11 +122,12 @@ const Arrows = (props) => {
             }
           }}
         >
-          <Icon name={leftSVG} size="55px" />
+          <Icon name={leftSVG} size="40px" />
         </button>
 
         <button
           className="right-arrow"
+          style={{ padding: size }}
           aria-label="Prev Slide"
           onClick={() => {
             if (slider.current) {
@@ -43,7 +135,7 @@ const Arrows = (props) => {
             }
           }}
         >
-          <Icon name={rightSVG} size="55px" />
+          <Icon name={rightSVG} size="40px" />
         </button>
       </div>
     </div>
@@ -51,18 +143,27 @@ const Arrows = (props) => {
 };
 
 const HeroCarousel = (props) => {
-  const { data, editable } = props;
+  const intl = useIntl();
+  const { data, editable, properties } = props;
+  const { title, description, start, end } = properties || {};
+
+  const isEvent = properties?.['@type'] === 'Event';
+  const endDate = new Date(end || Date.now());
+  const startDate = new Date(start || Date.now());
+  const isCurrentEvent = startDate <= Date.now() && endDate >= Date.now();
+  const isFutureEvent = startDate > Date.now();
   const {
     cards,
     image_scale,
-    height = '950',
+    height = '1050',
     fade = true,
     infinite = true,
-    autoplay = true,
+    autoplay = false,
     hideArrows = false,
     pauseOnHover = true,
     autoplaySpeed = 10000,
     hideNavigationDots = true,
+    hideTitle = false,
   } = data;
   const slider = React.useRef(null);
 
@@ -80,7 +181,12 @@ const HeroCarousel = (props) => {
   };
 
   if (!cards?.length && editable) {
-    return <Message>No image cards</Message>;
+    return (
+      <>
+        <Message>No image cards</Message>
+        {noSlidesBlock(title, description)}
+      </>
+    );
   }
 
   const isFirstBlock =
@@ -103,9 +209,9 @@ const HeroCarousel = (props) => {
             const image = getFieldURL(card.attachedimage);
 
             return (
-              <div className="slider-slide" key={index}>
+              <div className="slider-slide hero" key={index}>
                 <div
-                  className="slide-img"
+                  className="slide-img hero"
                   style={
                     image
                       ? {
@@ -118,32 +224,64 @@ const HeroCarousel = (props) => {
                       : {}
                   }
                 />
-                <div className="slide-overlay"></div>
-                <div className="slider-caption ui container">
-                  <div className="slide-body">
-                    {card.link ? (
+                <div className="slide-overlay hero"></div>
+                <div className="slider-caption hero">
+                  <div className="slide-body hero">
+                    {startDate && isEvent && (
+                      <div className="hero event-label">
+                        <span
+                          className={
+                            isFutureEvent
+                              ? 'future'
+                              : isCurrentEvent
+                              ? 'current'
+                              : 'past'
+                          }
+                        >
+                          {isFutureEvent
+                            ? intl.formatMessage(messages.future)
+                            : isCurrentEvent
+                            ? intl.formatMessage(messages.nowOnDisplay)
+                            : intl.formatMessage(messages.pastExibition)}
+                        </span>
+                      </div>
+                    )}
+                    {hideTitle ? (
+                      ''
+                    ) : card.link ? (
                       <UniversalLink href={link}>
-                        <div className="slide-title">{card.title || ''}</div>
+                        <h1 className="slide-title hero">{card.title || ''}</h1>
                       </UniversalLink>
+                    ) : card.title ? (
+                      <h1 className="slide-title">{card.title || ''}</h1>
                     ) : (
-                      <div className="slide-title">{card.title || ''}</div>
+                      <h1 className="slide-title hero">{title || ''}</h1>
                     )}
                     {/* Incomplete backward-compatibility: */}
-                    {card.text?.data ? (
+                    {card.text?.[0]?.children?.[0]?.text ? (
                       <div
-                        className="slide-description"
+                        className="slide-description hero"
                         dangerouslySetInnerHTML={{
-                          __html: card.text?.data || '',
+                          __html: card.text?.[0]?.children?.[0]?.text || '',
                         }}
                       />
                     ) : (
-                      <div className="slide-description">
+                      <div className="slide-description hero">
                         {serializeNodes(card.text)}
                       </div>
                     )}
+                    {startDate && isEvent && (
+                      <p className="slide-description hero">
+                        {getDateRangeDescription(
+                          intl.locale,
+                          startDate,
+                          endDate,
+                        )}
+                      </p>
+                    )}
                   </div>
                 </div>
-                <div className="slide-copyright ui container">
+                <div className="slide-copyright ui container hero">
                   {serializeNodes(card.copyright)}
                 </div>
               </div>
@@ -152,9 +290,16 @@ const HeroCarousel = (props) => {
         </Slider>
         {!hideArrows && cards.length > 1 && <Arrows slider={slider} />}
       </div>
+      {description && (
+        <div className="description-container hero">
+          <Container>
+            <p className="content-description hero">{description}</p>
+          </Container>
+        </div>
+      )}
     </div>
   ) : (
-    ''
+    <>{noSlidesBlock(title, description)}</>
   );
 };
 

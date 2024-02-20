@@ -14,6 +14,7 @@ export const CommonCarouselschemaExtender = ({ data }) => {
           'hideNavigationDots',
           'fade',
           'height',
+          'hideTitle',
         ],
       },
     ],
@@ -60,6 +61,10 @@ export const CommonCarouselschemaExtender = ({ data }) => {
             CSS height
           </a>
         ),
+      },
+      hideTitle: {
+        type: 'boolean',
+        title: 'Hide title',
       },
     },
   };

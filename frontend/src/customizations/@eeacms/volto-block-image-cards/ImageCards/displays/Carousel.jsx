@@ -1,13 +1,13 @@
-import React from 'react';
-import cx from 'classnames';
+import { CommonCarouselschemaExtender } from '@eeacms/volto-block-image-cards/ImageCards/CommonAssets/schema';
+import { getScaleUrl } from '@eeacms/volto-block-image-cards/ImageCards/utils';
+import { getFieldURL } from '@eeacms/volto-block-image-cards/helpers';
 import loadable from '@loadable/component';
-import { Message } from 'semantic-ui-react';
+import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
-import { serializeNodes } from '@plone/volto-slate/editor/render';
-import { getFieldURL } from '@eeacms/volto-block-image-cards/helpers';
-import { getScaleUrl } from '@eeacms/volto-block-image-cards/ImageCards/utils';
-import { CommonCarouselschemaExtender } from '@eeacms/volto-block-image-cards/ImageCards/CommonAssets/schema';
+import cx from 'classnames';
+import React from 'react';
+import { Message } from 'semantic-ui-react';
 
 import leftSVG from '@plone/volto/icons/left-key.svg';
 import rightSVG from '@plone/volto/icons/right-key.svg';

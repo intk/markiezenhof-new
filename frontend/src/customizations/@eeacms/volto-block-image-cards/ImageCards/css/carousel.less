@@ -36,20 +36,23 @@
 
     .slider-slide {
       .slide-img {
-        height: @slideImgHeight;
+        // height: 100%;
         background-position: center;
         background-size: cover;
       }
 
       .slider-caption {
         position: absolute;
-        right: @slideBodyRightPosition;
-        bottom: @slideBodyBottomPosition;
-        left: @slideBodyLeftPosition;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
 
-        @media (max-width: 600px) {
-          bottom: @slideBodyBottomMobilePosition;
-        }
+        // @media (max-width: 600px) {
+        //   bottom: @slideBodyBottomMobilePosition;
+        // }
       }
 
       .slide-body {
@@ -144,35 +147,31 @@
 }
 
 .slider-arrow {
-  position: absolute;
-  right: 0;
-  bottom: @sliderArrowBottomPosition;
-  left: 0;
+  position: relative;
+  bottom: calc(50% + 3px);
   margin-right: auto;
   margin-left: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   .left-arrow,
   .right-arrow {
-    position: relative;
+    position: absolute;
     border: 0;
     margin-bottom: 0;
     appearance: none;
-    background-color: transparent;
-    color: @sliderArrowColor;
+    background-color: rgba(36, 36, 36, 0.6);
+    color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     outline: none;
   }
 
   .left-arrow {
-    left: @sliderArrowLeftArrowPosition;
+    left: 0;
   }
 
   .right-arrow {
-    left: @sliderArrowRightArrowPosition;
-  }
-
-  @media (max-width: 600px) {
-    bottom: @sliderArrowMobileBottomPosition;
+    right: 0;
   }
 }
 
