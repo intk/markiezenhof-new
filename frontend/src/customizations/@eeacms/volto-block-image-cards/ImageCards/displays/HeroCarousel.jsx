@@ -110,7 +110,7 @@ const Arrows = (props) => {
   }, []);
 
   return (
-    <div className="slider-arrow">
+    <div className="slider-arrow hero">
       <div className="ui container">
         <button
           className="left-arrow"
@@ -154,7 +154,7 @@ const HeroCarousel = (props) => {
   const isFutureEvent = startDate > Date.now();
   const {
     cards,
-    height = '110vh',
+    height = '90vh',
     fade = true,
     infinite = true,
     autoplay = false,
