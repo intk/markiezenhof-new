@@ -9,6 +9,7 @@
     }
   }
   .hero.description-container {
+    text-align: left;
     background: @primaryColor;
     color: @primaryText;
     position: relative;
@@ -28,6 +29,10 @@
       font-weight: 800;
       line-height: 1.5;
       text-align: left;
+
+      @media (max-width: 781px) {
+        padding-left: 7px;
+      }
     }
   }
 
@@ -44,6 +49,11 @@
         padding-right: 70px;
         padding-left: 70px;
         margin: 0 !important;
+      }
+      .slide-copyright > p,
+      .slide-copyright > h2,
+      .slide-copyright > h3 {
+        color: @theme-color-white !important;
       }
       .slide-body {
         .hero.event-label {
@@ -103,6 +113,9 @@
         .slide-description > p {
           color: @theme-color-white;
           font-family: @pageFont;
+          letter-spacing: normal;
+          -webkit-font-smoothing: auto;
+          -moz-osx-font-smoothing: auto;
         }
         .hero.slide-description{
           font-size: 22px;

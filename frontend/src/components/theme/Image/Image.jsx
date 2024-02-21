@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { getImageAttributes } from '@package/helpers/images';
+import PropTypes from 'prop-types';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 /**
  * Image component

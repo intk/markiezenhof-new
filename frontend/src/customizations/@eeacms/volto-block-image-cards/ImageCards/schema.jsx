@@ -1,40 +1,66 @@
 import config from '@plone/volto/registry';
 
-const ImageCard = () => ({
-  title: 'Image Card',
-  fieldsets: [
-    {
-      id: 'default',
-      title: 'Default',
-      fields: ['title', 'text', 'attachedimage', 'link', 'copyright'],
-    },
-  ],
+function ImageCard(isHero = false) {
+  return isHero
+    ? {
+        title: 'Image Card',
+        fieldsets: [
+          {
+            id: 'default',
+            title: 'Default',
+            fields: ['attachedimage', 'copyright'],
+          },
+        ],
 
-  properties: {
-    title: {
-      type: 'string',
-      title: 'Title',
-    },
-    text: {
-      widget: 'slate_richtext',
-      title: 'Text',
-    },
-    link: {
-      widget: 'url',
-      title: 'Link',
-    },
-    attachedimage: {
-      widget: 'attachedimage',
-      title: 'Image',
-    },
-    copyright: {
-      widget: 'slate_richtext',
-      title: 'Copyright',
-    },
-  },
+        properties: {
+          attachedimage: {
+            widget: 'attachedimage',
+            title: 'Image',
+          },
+          copyright: {
+            widget: 'slate_richtext',
+            title: 'Copyright',
+          },
+        },
 
-  required: ['attachedimage'],
-});
+        required: ['attachedimage'],
+      }
+    : {
+        title: 'Image Card',
+        fieldsets: [
+          {
+            id: 'default',
+            title: 'Default',
+            fields: ['title', 'text', 'attachedimage', 'link', 'copyright'],
+          },
+        ],
+
+        properties: {
+          title: {
+            type: 'string',
+            title: 'Title',
+          },
+          text: {
+            widget: 'slate_richtext',
+            title: 'Text',
+          },
+          link: {
+            widget: 'url',
+            title: 'Link',
+          },
+          attachedimage: {
+            widget: 'attachedimage',
+            title: 'Image',
+          },
+          copyright: {
+            widget: 'slate_richtext',
+            title: 'Copyright',
+          },
+        },
+
+        required: ['attachedimage'],
+      };
+}
 
 const ImageCards = (props) => {
   const display_types_obj =
@@ -44,19 +70,14 @@ const ImageCards = (props) => {
     display_types_obj[template].title || template,
   ]);
   const selected_renderer = props && props.data.display;
+  const isHero = selected_renderer === 'hero_carousel';
   const schema =
     (selected_renderer && display_types_obj[selected_renderer]?.schema) ||
     ImageCard;
 
+  const fields = ['display', 'cards'];
+
   const properties = {
-    title: {
-      type: 'string',
-      title: 'Title',
-    },
-    text: {
-      widget: 'slate_richtext',
-      title: 'Text',
-    },
     display: {
       title: 'Display',
       choices: [...display_types],
@@ -66,19 +87,32 @@ const ImageCards = (props) => {
       widget: 'object_list',
       title: 'Images',
       description: 'Add a list of Images as Carousel Items',
-      schema: schema(),
+      schema: schema(isHero),
     },
-    image_scale: {
+  };
+
+  if (!isHero) {
+    properties.title = {
+      type: 'string',
+      title: 'Title',
+    };
+    properties.text = {
+      widget: 'slate_richtext',
+      title: 'Text',
+    };
+    properties.image_scale = {
       type: 'string',
       title: 'Image scale',
       default: 'large',
-    },
-    align: {
+    };
+    properties.align = {
       title: 'Alignment',
       widget: 'align',
       type: 'string',
-    },
-  };
+    };
+
+    fields.push('title', 'text', 'image_scale', 'align');
+  }
 
   return {
     title: 'Image Cards',
@@ -87,7 +121,7 @@ const ImageCards = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['title', 'text', 'display', 'align', 'image_scale', 'cards'],
+        fields,
       },
     ],
 

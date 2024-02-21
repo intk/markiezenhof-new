@@ -1,9 +1,9 @@
-import { CommonCarouselschemaExtender } from '@eeacms/volto-block-image-cards/ImageCards/CommonAssets/schema';
+import { HeroCarouselschemaExtender } from '@eeacms/volto-block-image-cards/ImageCards/CommonAssets/schema';
 import { getScaleUrl } from '@eeacms/volto-block-image-cards/ImageCards/utils';
 import { getFieldURL } from '@eeacms/volto-block-image-cards/helpers';
 import loadable from '@loadable/component';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
-import { Icon, UniversalLink } from '@plone/volto/components';
+import { Icon } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import cx from 'classnames';
 import React, { useEffect, useState } from 'react';
@@ -154,8 +154,7 @@ const HeroCarousel = (props) => {
   const isFutureEvent = startDate > Date.now();
   const {
     cards,
-    image_scale,
-    height = '1050',
+    height = '110vh',
     fade = true,
     infinite = true,
     autoplay = false,
@@ -183,7 +182,7 @@ const HeroCarousel = (props) => {
   if (!cards?.length && editable) {
     return (
       <>
-        <Message>No image cards</Message>
+        <Message>No image cards, defaulting to text</Message>
         {noSlidesBlock(title, description)}
       </>
     );
@@ -202,10 +201,9 @@ const HeroCarousel = (props) => {
     >
       {isFirstBlock && <BodyClass className="has-hero-section" />}
       <BodyClass className="has-carousel" />
-      <div className="slider-wrapper hero" style={{ height: `${height}px` }}>
+      <div className="slider-wrapper hero" style={{ height: `${height}` }}>
         <Slider {...settings} ref={slider}>
           {(cards || []).map((card, index) => {
-            const link = getFieldURL(card.link);
             const image = getFieldURL(card.attachedimage);
 
             return (
@@ -217,9 +215,12 @@ const HeroCarousel = (props) => {
                       ? {
                           backgroundImage: `url(${getScaleUrl(
                             image,
-                            image_scale || 'large',
+                            'great',
                           )})`,
-                          height: `${height}px`,
+                          height: `${height}`,
+                          // backgroundSize: 'fit',
+                          backgroundPosition: 'center',
+                          backgroundRepeat: 'no-repeat',
                         }
                       : {}
                   }
@@ -248,27 +249,8 @@ const HeroCarousel = (props) => {
                     )}
                     {hideTitle ? (
                       ''
-                    ) : card.link ? (
-                      <UniversalLink href={link}>
-                        <h1 className="slide-title hero">{card.title || ''}</h1>
-                      </UniversalLink>
-                    ) : card.title ? (
-                      <h1 className="slide-title">{card.title || ''}</h1>
                     ) : (
                       <h1 className="slide-title hero">{title || ''}</h1>
-                    )}
-                    {/* Incomplete backward-compatibility: */}
-                    {card.text?.[0]?.children?.[0]?.text ? (
-                      <div
-                        className="slide-description hero"
-                        dangerouslySetInnerHTML={{
-                          __html: card.text?.[0]?.children?.[0]?.text || '',
-                        }}
-                      />
-                    ) : (
-                      <div className="slide-description hero">
-                        {serializeNodes(card.text)}
-                      </div>
                     )}
                     {startDate && isEvent && (
                       <p className="slide-description hero">
@@ -306,7 +288,7 @@ const HeroCarousel = (props) => {
 export default HeroCarousel;
 
 HeroCarousel.schemaExtender = (schema, data, intl) => {
-  const Common = CommonCarouselschemaExtender({ data, schema, intl });
+  const Common = HeroCarouselschemaExtender({ data, schema, intl });
 
   return {
     ...schema,
