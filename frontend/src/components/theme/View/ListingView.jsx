@@ -1,15 +1,17 @@
-import React from 'react';
-import { Container } from 'semantic-ui-react'; // Segment,
-import { BodyClass } from '@plone/volto/helpers';
-// import ListingTemplate from '@package/components/blocks/Listing/ListingTemplate';
 import ListingBody from '@plone/volto/components/manage/Blocks/Listing/ListingBody';
+import { BodyClass } from '@plone/volto/helpers';
+import { Container } from 'semantic-ui-react'; // Segment,
 
 const ListingView = ({ content, location: { pathname } }) => {
   return (
     <Container id="page-folder">
       <BodyClass className="multiple-content-view" />
       <section id="content-core">
-        <ListingBody properties={content} data={{}} path={pathname} />
+        <ListingBody
+          properties={content}
+          data={{ isFolder: true }}
+          path={pathname}
+        />
       </section>
     </Container>
   );

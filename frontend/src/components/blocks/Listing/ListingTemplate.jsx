@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Grid } from 'semantic-ui-react';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import PropTypes from 'prop-types';
+import { Grid } from 'semantic-ui-react';
 
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 
@@ -44,6 +43,7 @@ const ListingTemplate = (props) => {
     linkHref,
     showDescription = false,
     isEditMode,
+    isFolder = false,
   } = props;
 
   let link = null;
@@ -72,7 +72,7 @@ const ListingTemplate = (props) => {
             className="listing-column"
             key={i}
           >
-            <Card item={item} showDescription={showDescription} />
+            <Card item={item} showDescription={showDescription || isFolder} />
           </Grid.Column>
         ))}
       </Grid>
