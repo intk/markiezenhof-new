@@ -3,13 +3,15 @@ import { BodyClass } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react'; // Segment,
 
 const ListingView = ({ content, location: { pathname } }) => {
+  const { show_description: folderShowDescription } = content || {};
+
   return (
     <Container id="page-folder">
       <BodyClass className="multiple-content-view" />
       <section id="content-core">
         <ListingBody
           properties={content}
-          data={{ isFolder: true }}
+          data={{ folderShowDescription }}
           path={pathname}
         />
       </section>

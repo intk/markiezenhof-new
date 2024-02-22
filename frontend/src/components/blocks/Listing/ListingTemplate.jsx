@@ -43,7 +43,7 @@ const ListingTemplate = (props) => {
     linkHref,
     showDescription = false,
     isEditMode,
-    isFolder = false,
+    folderShowDescription = false,
   } = props;
 
   let link = null;
@@ -72,7 +72,10 @@ const ListingTemplate = (props) => {
             className="listing-column"
             key={i}
           >
-            <Card item={item} showDescription={showDescription || isFolder} />
+            <Card
+              item={item}
+              showDescription={showDescription || folderShowDescription}
+            />
           </Grid.Column>
         ))}
       </Grid>
