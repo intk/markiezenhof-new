@@ -774,11 +774,15 @@ body:not(.has-hero-image).has-hero-section {
 
     h1.documentFirstHeading {
       margin-top: 20px;
+      padding-bottom: 15px;
     }
 
     .content-description {
-      font-size: 22px;
+      font-size: 28px;
       line-height: 1.636;
+      @media (max-width: 992px) {
+        font-size: 22px;
+      }
     }
   }
 }
