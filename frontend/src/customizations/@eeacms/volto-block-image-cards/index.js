@@ -21,7 +21,7 @@ export default (config) => {
         schemaExtender: Carousel.schemaExtender,
       },
       hero_carousel: {
-        title: 'Hero Carousel',
+        title: 'Hero Carousel & Summary',
         schema: null,
         view: HeroCarousel,
         schemaExtender: HeroCarousel.schemaExtender,

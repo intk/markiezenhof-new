@@ -81,6 +81,7 @@
         Page
 --------------------*/
 @lineHeight: 1.5em;
+@pageMaxWidth: 800px;
 
 /*-------------------
        Links

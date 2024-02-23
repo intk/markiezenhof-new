@@ -12,7 +12,7 @@ const Source = ({ source = '', sourceHref }) => (
 );
 
 const ViewImage = (props) => {
-  const { data = {}, detached } = props;
+  const { data = {} } = props;
   const { source, sourceHref, imageCaption } = data;
   const Wrapper = data.align === 'full' ? 'figure' : 'div';
   const commonClasses = {
@@ -24,12 +24,8 @@ const ViewImage = (props) => {
   return (
     <div
       className={cx(
-        'block image align',
-        {
-          // center: !Boolean(data.align),
-          detached,
-        },
-        data.align,
+        'block image',
+        !data.align || data.align === 'center' ? '' : `align ${data.align}`,
       )}
     >
       <Wrapper

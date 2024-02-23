@@ -33,10 +33,7 @@ body {
 body:not(.contenttype-lrf) {
   #page-document.ui.container .content-container,
   #page-document.ui.container .events-container .events-content{
-    & > ul {
-      max-width: 744px !important;
-    }
-
+    & > ul,
     & > p,
     & > blockquote {
       max-width: 744px !important;
@@ -45,6 +42,24 @@ body:not(.contenttype-lrf) {
     }
   }
 }
+
+// body:not(.contenttype-lrf) {
+//   #page-document.ui.container .content-container *:not(.full):not(.full *):not(.full-width):not(.full-width *),
+//   #page-document.ui.container .events-container .events-content *:not(.full):not(.full *):not(.full-width):not(.full-width *) {
+//     max-width: @pageMaxWidth !important;
+//     margin-right: auto;
+//     margin-left: 0;
+//   }
+
+//   #page-document.ui.container .content-container .full, #page-document.ui.container .content-container .full *,
+//   #page-document.ui.container .content-container .full-width, #page-document.ui.container .content-container .full-width *,
+//   #page-document.ui.container .events-container .events-content .full, #page-document.ui.container .events-container .events-content .full *,
+//   #page-document.ui.container .events-container .events-content .full-width, #page-document.ui.container .events-container .events-content .full-width * {
+//     max-width: initial;
+//     margin-right: initial;
+//     margin-left: initial;
+//   }
+// }
 
 body:not(.has-hero-section) {
   .content-area {

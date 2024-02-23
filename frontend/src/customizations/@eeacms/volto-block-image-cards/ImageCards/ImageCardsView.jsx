@@ -1,4 +1,5 @@
 import config from '@plone/volto/registry';
+import cx from 'classnames';
 
 const CardsView = (props) => {
   const byDisplayType = {};
@@ -13,8 +14,16 @@ const CardsView = (props) => {
 };
 
 const ImageCardsView = (props) => {
+  const { display, align } = props.data || undefined;
+
   return (
-    <div className="image-cards-wrapper">
+    <div
+      className={cx(
+        'image-cards-wrapper',
+        display === 'hero_carousel' ? 'hero' : '',
+        align === 'full' ? 'full' : '',
+      )}
+    >
       <CardsView {...props} />
     </div>
   );
