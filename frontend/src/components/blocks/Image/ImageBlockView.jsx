@@ -1,7 +1,6 @@
-import React from 'react';
 import { ConditionalLink } from '@plone/volto/components';
-import cx from 'classnames';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
+import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 const Source = ({ source = '', sourceHref }) => (
@@ -15,25 +14,30 @@ const Source = ({ source = '', sourceHref }) => (
 const ViewImage = (props) => {
   const { data = {}, detached } = props;
   const { source, sourceHref, imageCaption } = data;
+  const Wrapper = data.align === 'full' ? 'figure' : 'div';
+  const commonClasses = {
+    large: data.size === 'l',
+    medium: data.size === 'm',
+    small: data.size === 's',
+  };
 
   return (
     <div
       className={cx(
         'block image align',
         {
-          center: !Boolean(data.align),
+          // center: !Boolean(data.align),
           detached,
         },
         data.align,
       )}
     >
-      <figure
-        className={cx('image-wrapper', {
-          'full-width': data.align === 'full',
-          large: data.size === 'l',
-          medium: data.size === 'm',
-          small: data.size === 's',
-        })}
+      <Wrapper
+        className={cx(
+          'image-wrapper',
+          data.align === 'full' && 'full-width',
+          commonClasses,
+        )}
       >
         {data.url && (
           <>
@@ -98,7 +102,7 @@ const ViewImage = (props) => {
             <span className="image-caption">{imageCaption}</span>
           )}
         </figcaption>
-      </figure>
+      </Wrapper>
     </div>
   );
 };
