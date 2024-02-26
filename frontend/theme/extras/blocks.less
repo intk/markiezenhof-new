@@ -9,6 +9,13 @@
 @import url('blocks/form.less');
 @import url(blocks/imageCards.less);
 
+#description,
+#page-document.ui.container{
+  @media only screen and (min-width: @pageTriggerWidth) {
+    width: @pageMaxWidth !important;
+  }
+}
+
 body.contenttype-lrf,
 body.homepage-view
 body.hero-view {

@@ -274,7 +274,7 @@ const HeroCarousel = (props) => {
       </div>
       {description && (
         <div className="description-container hero">
-          <Container>
+          <Container id="description">
             <p className="content-description hero">{description}</p>
           </Container>
         </div>

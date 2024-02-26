@@ -82,6 +82,7 @@
 --------------------*/
 @lineHeight: 1.5em;
 @pageMaxWidth: 800px;
+@pageTriggerWidth: 990px;
 
 /*-------------------
        Links
