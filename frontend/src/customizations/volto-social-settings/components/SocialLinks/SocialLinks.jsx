@@ -21,12 +21,13 @@ const SocialLinks = ({ wrapperCssClass, itemCssClass }) => {
 
   return socialSettings?.length > 0 ? (
     <div className={cx('social-header', wrapperCssClass)}>
-      {socialSettings.map((social) => (
+      {socialSettings.map((social, index) => (
         <a
           href={social.url}
           title={social.title}
           target="_blank"
           rel="noopener noreferrer"
+          key={index}
         >
           {social.icon === 'x-twitter' ? (
             <i className="icon large">
