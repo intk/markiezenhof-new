@@ -229,12 +229,20 @@ nav.navigation {
     margin: 0;
     list-style: none;
 
+    @media (max-width: 788px) {
+      flex-direction: column;
+    }
+
     li.item {
       display: flex;
       width: 50%;
       flex-direction: column;
       margin: 3rem 0 0 0 !important;
       text-align: left;
+
+      @media (max-width: 788px) {
+        width: 100%;
+      }
 
       a {
         display: inline-block;
@@ -441,7 +449,14 @@ nav.navigation {
 
   .mobile-menu-nav {
     align-items: flex-start;
-    margin-top: 10em;
+    margin-top: 8.5rem;
+    .ui.container{
+      height: 75%;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &::before {
