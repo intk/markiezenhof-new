@@ -51,7 +51,7 @@
       .hero.slider-caption{
         background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,transparent 70%);
         padding-right: 70px;
-        padding-left: 70px;
+        padding-left: 95px;
         margin: 0 !important;
 
         @media (max-width: 662px) {
@@ -65,6 +65,7 @@
         color: @theme-color-white !important;
       }
       .slide-body {
+        max-width: @pageMaxWidth;
         .hero.event-label {
           span {
             position: relative;
@@ -109,7 +110,6 @@
           font-family: @headerFont;
           font-size: 80px;
           line-height: 80px;
-          padding: 0 20px;
           margin-top: 0;
           margin-bottom: 10px;
           text-align: left;
