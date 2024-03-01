@@ -1,16 +1,66 @@
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import PropTypes from 'prop-types';
+import { useIntl } from 'react-intl';
 import { Grid } from 'semantic-ui-react';
 
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
+const getDateRangeDescription = (lang, start, end) => {
+  if (
+    !end ||
+    (start.getMonth() === end.getMonth() &&
+      start.getFullYear() === end.getFullYear() &&
+      start.getDate() === end.getDate())
+  ) {
+    return new Intl.DateTimeFormat(lang, {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(start);
+  }
 
-const Card = ({ item, showDescription = true }) => {
+  if (
+    start.getMonth() === end.getMonth() &&
+    start.getFullYear() === end.getFullYear()
+  ) {
+    return `${new Intl.DateTimeFormat(lang, {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
+      lang,
+      {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+      },
+    ).format(end)}`;
+  }
+
+  return `${new Intl.DateTimeFormat(lang, {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
+    lang,
+    {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    },
+  ).format(end)}`;
+};
+
+const Card = ({ item, showDescription = true, hideDates = false }) => {
+  const intl = useIntl();
+  const start = item.start ? new Date(item.start) : undefined;
+  const end = item.end ? new Date(item.end) : undefined;
   const image = item?.image_field
     ? `${item['@id']}/${
         item.image_scales[item.image_field]?.[0]?.scales?.teaser?.download
       }`
     : null;
+
   return (
     <div className="plone-item-card">
       {image && (
@@ -29,6 +79,24 @@ const Card = ({ item, showDescription = true }) => {
           <span>{item.title}</span>
         </h3>
       </UniversalLink>
+      {!hideDates && (
+        <div className="event-label">
+          {item['@type'] === 'Event' && start && end && (
+            <div className="listing-dates">
+              <div className={`listing-dates-wrapper`}>
+                {getDateRangeDescription(intl.locale, start, end)}
+              </div>
+            </div>
+          )}
+          {item['@type'] === 'News Item' && (
+            <div className="listing-dates">
+              <div className={`listing-dates-wrapper`}>
+                {getDateRangeDescription(intl.locale, start, end)}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       {!!showDescription && (
         <p className="plone-item-description">{item.description}</p>
       )}
@@ -44,6 +112,7 @@ const ListingTemplate = (props) => {
     showDescription = false,
     isEditMode,
     showListDescriptions = false,
+    hideDates = false,
   } = props;
 
   let link = null;
@@ -75,6 +144,7 @@ const ListingTemplate = (props) => {
             <Card
               item={item}
               showDescription={showDescription || showListDescriptions}
+              hideDates={hideDates}
             />
           </Grid.Column>
         ))}

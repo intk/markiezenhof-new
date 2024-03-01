@@ -29,6 +29,11 @@ export default (config) => {
         type: 'boolean',
         default: false,
       },
+      hideDates: {
+        title: 'Hide dates',
+        type: 'boolean',
+        default: false,
+      },
     };
 
     schema.fieldsets[0].fields.splice(
@@ -37,6 +42,7 @@ export default (config) => {
       'linkHref',
       'linkTitle',
       'showDescription',
+      'hideDates',
     );
 
     return schema;
