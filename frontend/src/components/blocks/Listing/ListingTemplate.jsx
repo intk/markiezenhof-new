@@ -74,11 +74,6 @@ const Card = ({ item, showDescription = true, hideDates = false }) => {
           </figure>
         </UniversalLink>
       )}
-      <UniversalLink href={item['@id']} className="plone-item-card-link">
-        <h3 className="plone-item-title">
-          <span>{item.title}</span>
-        </h3>
-      </UniversalLink>
       {!hideDates && (
         <div className="event-label">
           {item['@type'] === 'Event' && start && end && (
@@ -97,6 +92,11 @@ const Card = ({ item, showDescription = true, hideDates = false }) => {
           )}
         </div>
       )}
+      <UniversalLink href={item['@id']} className="plone-item-card-link">
+        <h3 className="plone-item-title">
+          <span>{item.title}</span>
+        </h3>
+      </UniversalLink>
       {!!showDescription && (
         <p className="plone-item-description">{item.description}</p>
       )}
