@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Message } from 'semantic-ui-react';
-import { defineMessages, useIntl } from 'react-intl';
+import { MaybeWrap, UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
 import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
-import { MaybeWrap } from '@plone/volto/components';
-import { UniversalLink } from '@plone/volto/components';
-import cx from 'classnames';
+import {
+  BodyClass,
+  flattenToAppURL,
+  isInternalURL,
+} from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import { BodyClass } from '@plone/volto/helpers';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { defineMessages, useIntl } from 'react-intl';
+import { Message } from 'semantic-ui-react';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -133,6 +134,7 @@ const TeaserHeroTemplate = (props) => {
               {(href.hasPreviewImage || href.image_field || image) && (
                 <div className="image-wrapper">
                   <Image
+                    className="teaser"
                     src={hasImageComponent ? href : defaultImageSrc}
                     alt=""
                     loading="lazy"
