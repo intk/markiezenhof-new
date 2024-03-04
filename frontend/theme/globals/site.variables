@@ -43,6 +43,7 @@
 @secondaryText: @theme-color-gray;
 @footerColor: @theme-color-red;
 @footerText: @theme-color-white;
+@eventDateTextColor: #228ea7;
 
 @eventTagBackgroundColor: @theme-color-blue;
 @eventTagTextColor: @theme-color-white;
