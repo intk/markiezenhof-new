@@ -18,8 +18,9 @@ services:
     image: intkbv/markiezenhof-backend:latest
     environment:
       SITE: Plone
-    volumes:
-      - site-data:/data
+      ZEO_ADDRESS: zeo:8100
+    # volumes:
+    #   - site-data:/data
     networks:
       - nw-data
     ports:
@@ -29,14 +30,14 @@ services:
     depends_on:
       - zeo
 
-  # zeo:
-  #   image: plone/plone-zeo:latest
-  #   # ports:
-  #   # - 8100:8100
-  #   volumes:
-  #     - /var/local/markiezenhof/data:/data
-  #   networks:
-  #     - nw-data
+  zeo:
+    image: plone/plone-zeo:latest
+    # ports:
+    # - 8100:8100
+    volumes:
+      - /var/local/markiezenhof/data:/data
+    networks:
+      - nw-data
 
 volumes:
   site-data:
