@@ -164,7 +164,9 @@ const TeaserHeroTemplate = (props) => {
                 {data?.head_title && (
                   <div className="headline">{data.head_title}</div>
                 )}
-                <h2>{data?.title}</h2>
+                <div className="title">
+                  <h2>{data?.title}</h2>
+                </div>
                 {!data.hide_description && !isEvent && (
                   <p>{data?.description}</p>
                 )}

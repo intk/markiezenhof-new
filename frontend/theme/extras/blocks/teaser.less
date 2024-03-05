@@ -170,26 +170,32 @@
 
   .teaser-item.hero {
     .content {
-      // background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,transparent 70%);
+      background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,transparent 70%);
       padding-bottom: 1.25rem;
       position: absolute;
       z-index: 3;
-      right: 30px;
       bottom: 0;
-      left: 30px;
-      width: calc(100% - 60px);
-      max-width: 842px;
-      padding-right: 15px;
+      width: 100%;
+      padding: 0 25px !important;
       margin-right: 0;
       margin-left: 0;
-      padding-left: 5px !important;
 
-      h2 {
-        line-height: 65px !important;
+      .title{
+        max-width: 842px !important;
+        h2 {
+          font-size: 35px !important;
+          line-height: 40px !important;
+
+          @media (min-width: 662px) {
+            font-size: 80px !important;
+            line-height: 90px !important;
+          }
+        }
       }
 
       @media (min-width: 992px) {
-        padding-left: 20px !important;
+        padding-right: 30px !important;
+        padding-left: 60px !important;
       }
     }
 
@@ -266,10 +272,10 @@ body.has-toolbar {
   .block.teaser {
     .teaser-item.hero {
       .content {
-        @media (min-width: 768px) {
-          left: calc(30px + 80px);
-          width: calc(100% - 30px - 80px);
-        }
+        // @media (min-width: 768px) {
+        //   left: calc(30px + 80px);
+        //   width: calc(100% - 30px - 80px);
+        // }
       }
     }
   }
