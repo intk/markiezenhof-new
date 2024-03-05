@@ -3,7 +3,7 @@
 stage:
   hosts:
     haagshistorischmuseum-stage:
-      ansible_host: 35.157.113.72
+      ansible_host: 52.31.206.47
       ansible_ssh_port: 22
       ansible_user: ubuntu
       ansible_ssh_private_key_file: ~/.ssh/dev-Nicola.pem
