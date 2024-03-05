@@ -9,7 +9,7 @@ import TagManager from 'react-gtm-module';
 import '@plone/volto/config';
 
 const tagManagerArgs = {
-  gtmId: 'GTM-WHNL655',
+  gtmId: 'GTM-KD6G8H',
 };
 
 __CLIENT__ && !__DEVELOPMENT__ && TagManager.initialize(tagManagerArgs);
