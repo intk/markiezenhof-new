@@ -8,13 +8,18 @@ const installTextHighlightBlock = (config) => {
     title: 'Text Highlight',
     icon: alertSVG,
     group: 'common',
-    view: (props) => (
-      <div className="block full-width text-highlight">
-        <Container>
-          <TextBlockView {...props} />
-        </Container>
-      </div>
-    ),
+    view: (props) => {
+      const text = props.data.plaintext.trim() || '';
+      return text ? (
+        <div className="block text-highlight">
+          <Container>
+            <TextBlockView {...props} />
+          </Container>
+        </div>
+      ) : (
+        ''
+      );
+    },
     edit: (props) => (
       <div className="block edit-mode text-highlight">
         <TextBlockEdit {...props} />
