@@ -141,8 +141,6 @@ class Navigation extends Component {
         <div className="hamburger-wrapper">
           <a
             href={`/${String(this.props.lang)}/tickets`}
-            target="_blank"
-            rel="noopener noreferrer"
             className="tickets-button"
           >
             Tickets
