@@ -11,7 +11,7 @@ const installTextHighlightBlock = (config) => {
     view: (props) => {
       const text = props.data.plaintext.trim() || '';
       return text ? (
-        <div className="block text-highlight">
+        <div className="block full-width text-highlight">
           <Container>
             <TextBlockView {...props} />
           </Container>
