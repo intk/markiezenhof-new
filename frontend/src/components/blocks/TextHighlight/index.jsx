@@ -11,14 +11,12 @@ const installTextHighlightBlock = (config) => {
     view: (props) => (
       <div className="block full-width text-highlight">
         <Container>
-          <div className="rightarrow" />
-          <TextBlockView className="rightarrow" {...props} />
+          <TextBlockView {...props} />
         </Container>
       </div>
     ),
     edit: (props) => (
       <div className="block edit-mode text-highlight">
-        <div className="rightarrow" />
         <TextBlockEdit {...props} />
       </div>
     ),
