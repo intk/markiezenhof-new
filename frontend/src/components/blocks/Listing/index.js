@@ -1,3 +1,4 @@
+import HomepageSliderTemplate from '@package/components/blocks/Listing/HomepageSliderTemplate';
 import ListingsBlockTemplate from '@package/components/blocks/Listing/ListingTemplate';
 
 export default (config) => {
@@ -34,6 +35,11 @@ export default (config) => {
         type: 'boolean',
         default: false,
       },
+      firstBlock: {
+        title: 'First block',
+        type: 'boolean',
+        default: false,
+      },
     };
 
     schema.fieldsets[0].fields.splice(
@@ -43,6 +49,7 @@ export default (config) => {
       'linkTitle',
       'showDescription',
       'hideDates',
+      'firstBlock',
     );
 
     return schema;
@@ -55,6 +62,12 @@ export default (config) => {
       isDefault: true,
       title: 'Listing',
       template: ListingsBlockTemplate,
+    },
+    {
+      id: 'homepagesliderview',
+      isDefault: false,
+      title: 'Homepage Slider View',
+      template: HomepageSliderTemplate,
     },
   ];
 

@@ -150,6 +150,7 @@
     "@kitconcept/volto-slider-block": "*",
     "@plone/volto": "16.20.4",
     "react-gtm-module": "2.0.11",
+    "react-swipe": "6.0.0",
     "volto-editablefooter": "5.0.1",
     "volto-form-block": "3.0.1",
     "volto-gdpr-privacy": "github:intk/volto-gdpr-privacy",
