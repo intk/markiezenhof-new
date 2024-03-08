@@ -41,6 +41,7 @@ msgstr "Close menu"
 msgid "Description"
 msgstr "Description"
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection
@@ -53,6 +54,7 @@ msgstr "Future"
 msgid "Image override"
 msgstr "Image override"
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection
@@ -70,6 +72,7 @@ msgstr "Open in a new tab"
 msgid "Open menu"
 msgstr "Open menu"
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection

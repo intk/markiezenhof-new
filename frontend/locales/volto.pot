@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-04-29T01:12:31.139Z\n"
+"POT-Creation-Date: 2024-03-08T14:30:14.714Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,7 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection
@@ -55,6 +56,7 @@ msgstr ""
 msgid "Image override"
 msgstr ""
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection
@@ -72,6 +74,7 @@ msgstr ""
 msgid "Open menu"
 msgstr ""
 
+#: components/blocks/Listing/HomepageSliderTemplate
 #: components/blocks/Teaser/TeaserDefaultTemplate
 #: components/blocks/Teaser/TeaserHeroTemplate
 #: components/theme/Header/HeroSection
