@@ -40,6 +40,11 @@ export default (config) => {
         type: 'boolean',
         default: false,
       },
+      hideText: {
+        title: 'Hide text',
+        type: 'boolean',
+        default: false,
+      },
     };
 
     schema.fieldsets[0].fields.splice(
@@ -50,6 +55,7 @@ export default (config) => {
       'showDescription',
       'hideDates',
       'firstBlock',
+      'hideText',
     );
 
     return schema;

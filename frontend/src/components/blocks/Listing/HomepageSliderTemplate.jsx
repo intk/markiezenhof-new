@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // import { ListingBlockHeader } from '@package/components';
 import useInViewHomepage from '@package/helpers/useInViewHomepage';
 import { Icon, UniversalLink } from '@plone/volto/components';
@@ -69,7 +69,7 @@ const getDateRangeDescription = (lang, start, end) => {
   ).format(end)}`;
 };
 
-const Card = ({ item, index }) => {
+const Card = ({ item, index, hideText }) => {
   const { title, start, end } = item || {};
   const isEvent = item?.['@type'] === 'Event';
   const endDate = new Date(end || Date.now());
@@ -88,49 +88,75 @@ const Card = ({ item, index }) => {
       ) : (
         <BodyClass className="homepage-title-out-of-view" />
       )}
-      <UniversalLink href={item['@id']} className="plone-item-card-link">
+      {hideText ? (
         <div className="content">
-          <SlideshowPreview {...item} lazy={index !== 0} />
-          <div className="title-wrapper">
-            <div className="title-description">
-              <div className="slide-description">
-                {startDate && isEvent && (
-                  <div className="hero event-label">
-                    <span
-                      className={
-                        isFutureEvent
-                          ? 'future'
+          <SlideshowPreview
+            {...item}
+            lazy={index !== 0}
+            useLink={Boolean(false)}
+          />
+        </div>
+      ) : (
+        <UniversalLink href={item['@id']} className="plone-item-card-link">
+          <div className="content">
+            <SlideshowPreview {...item} lazy={index !== 0} useLink={true} />
+            <div className="title-wrapper">
+              <div className="title-description">
+                <div className="slide-description">
+                  {startDate && isEvent && (
+                    <div className="hero event-label">
+                      <span
+                        className={
+                          isFutureEvent
+                            ? 'future'
+                            : isCurrentEvent
+                            ? 'current'
+                            : 'past'
+                        }
+                      >
+                        {isFutureEvent
+                          ? intl.formatMessage(messages.future)
                           : isCurrentEvent
-                          ? 'current'
-                          : 'past'
-                      }
-                    >
-                      {isFutureEvent
-                        ? intl.formatMessage(messages.future)
-                        : isCurrentEvent
-                        ? intl.formatMessage(messages.nowOnDisplay)
-                        : intl.formatMessage(messages.pastExibition)}
-                    </span>
-                  </div>
-                )}
-                <h1 className="slide-title hero">{title || ''}</h1>
-                {startDate && isEvent && (
-                  <p className="slide-description hero">
-                    {getDateRangeDescription(intl.locale, startDate, endDate)}
-                  </p>
-                )}
+                          ? intl.formatMessage(messages.nowOnDisplay)
+                          : intl.formatMessage(messages.pastExibition)}
+                      </span>
+                    </div>
+                  )}
+                  <h1 className="slide-title hero">{title || ''}</h1>
+                  {startDate && isEvent && (
+                    <p className="slide-description hero">
+                      {getDateRangeDescription(intl.locale, startDate, endDate)}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </UniversalLink>
+        </UniversalLink>
+      )}
     </div>
   );
 };
 
 const HomepageSliderTemplate = (props) => {
-  const { items, firstBlock } = props;
+  const { items, firstBlock, hideText = false } = props;
+  const [size, setSize] = useState('40px');
   let reactSwipeEl;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 469) {
+        setSize('0px');
+      } else {
+        setSize('20px');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className={`homepage-slider-template ${firstBlock ? 'hero' : ''}`}>
@@ -145,7 +171,7 @@ const HomepageSliderTemplate = (props) => {
         >
           {items.map((item, index) => (
             <div>
-              <Card item={item} index={index} />
+              <Card item={item} index={index} hideText={hideText} />
             </div>
           ))}
         </ReactSwipe>
@@ -154,6 +180,7 @@ const HomepageSliderTemplate = (props) => {
             <button
               aria-label="left-arrow"
               className="left-button"
+              style={{ padding: size }}
               onClick={() => {
                 reactSwipeEl.prev();
               }}
@@ -163,6 +190,7 @@ const HomepageSliderTemplate = (props) => {
             <button
               aria-label="right-arrow"
               className="right-button"
+              style={{ padding: size }}
               onClick={() => {
                 reactSwipeEl.next();
               }}

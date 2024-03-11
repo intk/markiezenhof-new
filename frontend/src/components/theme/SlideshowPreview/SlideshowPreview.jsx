@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 function SlideshowPreview(props) {
   const item = props;
   const lazy = props.lazy;
+  const useLink = props.useLink;
 
   const loadingAttribute = lazy ? 'lazy' : 'eager';
 
@@ -22,10 +23,12 @@ function SlideshowPreview(props) {
 
   return (
     <>
-      {item.image_field !== '' ? (
+      {item.image_field !== '' && useLink ? (
         <Link to={flattenToAppURL(item['@id'])} className="listing-image">
           <img loading={loadingAttribute} src={src} alt={item.title ?? 'alt'} />
         </Link>
+      ) : item.image_field !== '' ? (
+        <img loading={loadingAttribute} src={src} alt={item.title ?? 'alt'} />
       ) : (
         <img
           src={src}
