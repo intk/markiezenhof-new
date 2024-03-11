@@ -26,7 +26,7 @@
 .homepage-slider-template {
   min-height: 500px;
   max-height: 900px;
-  height: 70vh;
+  height: 90vh;
   margin-bottom: 4rem;
 
   @media screen and (min-width: 768px) {
@@ -209,7 +209,7 @@
   .title-wrapper{
     position: absolute;
     height: 200px;
-    bottom: 0;
+    bottom: 8px;
     width: 100vw;
     padding: 0%;
     margin: 0%;
@@ -224,16 +224,13 @@
     margin-top: 10px;
     position: absolute;
     bottom: 30px;
-    left: 80px;
-    @media screen and (min-width: 470px) {
-      // left: 32px;
+    left: 18px;
+
+    @media screen and (min-width: 662px) {
+      left: 95px;
     }
     @media screen and (min-width: 992px){
        width: calc(100% - 250px);
-    }
-    @media screen and (min-width: 1200px){
-      // margin-left: 24px !important;
-      // left: 75px;
     }
 
     .hero.event-label {
@@ -295,12 +292,12 @@
       color: #ffffff !important;
     }
 
-    .hero.slide-description p{
+    .hero.slide-description {
       font-size: 22px;
       line-height: 33px;
       color: #ffffff !important;
-      font-family: 'IntroCondRegular', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-      letter-spacing: normal;
+      font-family: 'IntroCondRegular', 'Helvetica Neue', Arial, Helvetica, sans-serif !important;
+      letter-spacing: normal !important;
       -webkit-font-smoothing: auto;
       -moz-osx-font-smoothing: auto;
     }
@@ -312,7 +309,7 @@
 
     p {
       font-size: 20px;
-      color: #b6a782;
+      color: #df0934;
       line-height: 28px;
       margin-bottom: 0px;
 
@@ -331,7 +328,7 @@
   .item-description,
   .item-description span {
     font-size: 15px;
-    color: #b6a782;
+    color: #df0934;
     line-height: 25px;
 
     @media screen and (min-width: 992px) {
@@ -357,17 +354,12 @@
   }
   .slide-title{
     text-decoration: none !important;
-    font-size: 28px !important;
-    line-height: 32px !important;
-    font-family: 'StyreneBold', Arial, sans-serif;
+    font-size: 39px !important;
+    line-height: 34.32px !important;
     margin-bottom: 32px;
-    @media screen and (min-width: 768px) {
-      font-size: 30px !important;
-      line-height: 34px !important;
-    }
-    @media screen and (min-width: 1200px){
-      font-size: 38px !important;
-      line-height: 45px !important;
+    @media screen and (min-width: 992px){
+      font-size: 80px !important;
+      line-height: 80px !important;
     }
   }
   .slide-title:hover {
@@ -376,15 +368,12 @@
     text-decoration-thickness: 1px !important;
     text-underline-offset: 5px !important;
   }
-  .quote-top-left, .quote-top-right{
-    top: 12px !important;
-  }
 }
 
 
 .view-viewview.contenttype-lrf .homepage-slider-template .buttons{
   svg:hover {
-    fill: #b6a782
+    fill: #df0934
   }
   .right-button {
     opacity: 0.9 !important;
