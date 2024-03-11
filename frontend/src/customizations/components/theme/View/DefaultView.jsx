@@ -1,9 +1,6 @@
-import React from 'react';
-
 import { RenderBlocks } from '@plone/volto/components';
+import { getBaseUrl, hasBlocksData } from '@plone/volto/helpers';
 import { Container } from 'semantic-ui-react';
-
-import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
 
 // Customized to hide the title and description blocks, as they are included in
 // the header
@@ -26,6 +23,12 @@ const DefaultView = (props) => {
   const { content, location } = props;
   const path = getBaseUrl(location?.pathname || '');
 
+  const eventListPage =
+    path === '/nl/ontdek-het-paleis/zien-doen/tentoonstellingen' ||
+    path === '/nl/ontdek-het-paleis/zien-doen/tentoonstellingen/' ||
+    path === '/nl/ontdek-het-paleis/zien-doen/activiteiten' ||
+    path === '/nl/ontdek-het-paleis/zien-doen/activiteiten/';
+
   // const description = content?.description;
   const hasLeadImage = content?.preview_image;
   const filteredContent = hasLeadImage
@@ -33,13 +36,16 @@ const DefaultView = (props) => {
     : content;
 
   return hasBlocksData(content) ? (
-    <div id="page-document" className="ui container">
+    <div
+      id={eventListPage ? 'page-folder' : 'page-document'}
+      className="ui container"
+    >
       <div className="content-container">
         <RenderBlocks {...props} path={path} content={filteredContent} />
       </div>
     </div>
   ) : (
-    <Container id="page-document">
+    <Container id={eventListPage ? 'page-folder' : 'page-document'}>
       <div className="content-container">
         {/* default title+description blocks are inserted by the HeroSection */}
         {content.remoteUrl && (
