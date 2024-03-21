@@ -1,6 +1,5 @@
 import { MaybeWrap, UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
 import {
   BodyClass,
   flattenToAppURL,
@@ -11,6 +10,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { defineMessages, useIntl } from 'react-intl';
 import { Message } from 'semantic-ui-react';
+import { getTeaserImageURL } from './utils';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -82,13 +82,13 @@ const TeaserHeroTemplate = (props) => {
   const intl = useIntl();
   const href = data.href?.[0];
   const image = data.preview_image?.[0];
-  const align = data?.styles?.align;
+  // const align = data?.styles?.align;
 
   const hasImageComponent = config.getComponent('Image').component;
   const Image = config.getComponent('Image').component || DefaultImage;
   const { openExternalLinkInNewTab } = config.settings;
   const defaultImageSrc =
-    href && flattenToAppURL(getTeaserImageURL({ href, image, align }));
+    href && flattenToAppURL(getTeaserImageURL({ href, image }));
 
   const isEvent = data.href?.[0]?.['@type'] === 'Event';
   const end = new Date(data.href?.[0]?.end || Date.now());

@@ -1,14 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Message } from 'semantic-ui-react';
-import { defineMessages, useIntl } from 'react-intl';
+import { MaybeWrap, UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
-import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
-import { MaybeWrap } from '@plone/volto/components';
-import { UniversalLink } from '@plone/volto/components';
-import cx from 'classnames';
 import config from '@plone/volto/registry';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { defineMessages, useIntl } from 'react-intl';
+import { Message } from 'semantic-ui-react';
+import { getTeaserImageURL } from './utils';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -86,7 +84,7 @@ const TeaserDefaultTemplate = (props) => {
   const Image = config.getComponent('Image').component || DefaultImage;
   const { openExternalLinkInNewTab } = config.settings;
   const defaultImageSrc =
-    href && flattenToAppURL(getTeaserImageURL({ href, image, align }));
+    href && flattenToAppURL(getTeaserImageURL({ href, image }));
 
   const isEvent = data.href?.[0]?.['@type'] === 'Event';
   const end = new Date(data.href?.[0]?.end || Date.now());
