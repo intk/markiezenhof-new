@@ -1,15 +1,16 @@
-import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-// import { ListingBlockHeader } from '@package/components';
+import { getDateRangeDescription } from '@package/helpers/getDateRangeDescription';
 import useInViewHomepage from '@package/helpers/useInViewHomepage';
 import { Icon, UniversalLink } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import leftSVG from '@plone/volto/icons/left-key.svg';
 import rightSVG from '@plone/volto/icons/right-key.svg';
+import PropTypes from 'prop-types';
+import { useEffect, useRef, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import ReactSwipe from 'react-swipe';
 import SlideshowPreview from '../../theme/SlideshowPreview/SlideshowPreview';
 import './less/HomepageSliderTemplate.less';
+// import { ListingBlockHeader } from '@package/components';
 
 const messages = defineMessages({
   pastExibition: {
@@ -26,51 +27,8 @@ const messages = defineMessages({
   },
 });
 
-const getDateRangeDescription = (lang, start, end) => {
-  if (
-    !end ||
-    (start.getMonth() === end.getMonth() &&
-      start.getFullYear() === end.getFullYear() &&
-      start.getDate() === end.getDate())
-  ) {
-    return new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }).format(start);
-  }
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-      lang,
-      {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      },
-    ).format(end)}`;
-  }
-
-  return `${new Intl.DateTimeFormat(lang, {
-    day: 'numeric',
-    month: 'short',
-  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-    lang,
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    },
-  ).format(end)}`;
-};
-
 const Card = ({ item, index, hideText }) => {
-  const { title, start, end } = item || {};
+  const { title, start, end, whole_day } = item || {};
   const isEvent = item?.['@type'] === 'Event';
   const endDate = new Date(end || Date.now());
   const startDate = new Date(start || Date.now());
@@ -125,7 +83,12 @@ const Card = ({ item, index, hideText }) => {
                   <h1 className="slide-title hero">{title || ''}</h1>
                   {startDate && isEvent && (
                     <p className="slide-description hero">
-                      {getDateRangeDescription(intl.locale, startDate, endDate)}
+                      {getDateRangeDescription(
+                        intl.locale,
+                        startDate,
+                        endDate,
+                        whole_day,
+                      )}
                     </p>
                   )}
                 </div>

@@ -1,3 +1,4 @@
+import { getDateRangeDescription } from '@package/helpers/getDateRangeDescription';
 import { MaybeWrap, UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
@@ -29,49 +30,6 @@ const messages = defineMessages({
 });
 
 const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
-
-const getDateRangeDescription = (lang, start, end) => {
-  if (
-    !end ||
-    (start.getMonth() === end.getMonth() &&
-      start.getFullYear() === end.getFullYear() &&
-      start.getDate() === end.getDate())
-  ) {
-    return new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }).format(start);
-  }
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-      lang,
-      {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      },
-    ).format(end)}`;
-  }
-
-  return `${new Intl.DateTimeFormat(lang, {
-    day: 'numeric',
-    month: 'short',
-  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-    lang,
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    },
-  ).format(end)}`;
-};
 
 const TeaserDefaultTemplate = (props) => {
   const { className, data, isEditMode } = props;

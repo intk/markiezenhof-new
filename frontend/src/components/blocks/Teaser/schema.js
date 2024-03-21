@@ -1,5 +1,5 @@
-import { defineMessages } from 'react-intl';
 import { addStyling } from '@plone/volto/helpers/Extensions/withBlockSchemaEnhancer';
+import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   Target: {

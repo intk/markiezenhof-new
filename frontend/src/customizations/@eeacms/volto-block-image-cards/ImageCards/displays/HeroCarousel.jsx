@@ -2,16 +2,16 @@ import { HeroCarouselschemaExtender } from '@eeacms/volto-block-image-cards/Imag
 import { getScaleUrl } from '@eeacms/volto-block-image-cards/ImageCards/utils';
 import { getFieldURL } from '@eeacms/volto-block-image-cards/helpers';
 import loadable from '@loadable/component';
+import { getDateRangeDescription } from '@package/helpers/getDateRangeDescription';
 import { serializeNodes } from '@plone/volto-slate/editor/render';
 import { Icon } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
+import leftSVG from '@plone/volto/icons/left-key.svg';
+import rightSVG from '@plone/volto/icons/right-key.svg';
 import cx from 'classnames';
 import React, { useEffect, useState } from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Container, Message } from 'semantic-ui-react';
-
-import leftSVG from '@plone/volto/icons/left-key.svg';
-import rightSVG from '@plone/volto/icons/right-key.svg';
 import 'slick-carousel/slick/slick.css';
 import '../css/carousel.less';
 
@@ -46,49 +46,6 @@ const messages = defineMessages({
     defaultMessage: 'Future',
   },
 });
-
-const getDateRangeDescription = (lang, start, end) => {
-  if (
-    !end ||
-    (start.getMonth() === end.getMonth() &&
-      start.getFullYear() === end.getFullYear() &&
-      start.getDate() === end.getDate())
-  ) {
-    return new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }).format(start);
-  }
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-      lang,
-      {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      },
-    ).format(end)}`;
-  }
-
-  return `${new Intl.DateTimeFormat(lang, {
-    day: 'numeric',
-    month: 'short',
-  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-    lang,
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    },
-  ).format(end)}`;
-};
 
 const Arrows = (props) => {
   const { slider = {} } = props;
@@ -145,7 +102,7 @@ const Arrows = (props) => {
 const HeroCarousel = (props) => {
   const intl = useIntl();
   const { data, editable, properties } = props;
-  const { title, description, start, end } = properties || {};
+  const { title, description, start, end, whole_day } = properties || {};
 
   const isEvent = properties?.['@type'] === 'Event';
   const endDate = new Date(end || Date.now());
@@ -258,6 +215,7 @@ const HeroCarousel = (props) => {
                           intl.locale,
                           startDate,
                           endDate,
+                          whole_day,
                         )}
                       </p>
                     )}

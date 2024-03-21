@@ -1,4 +1,5 @@
 import Image from '@package/components/theme/Image/Image';
+import { getDateRangeDescription } from '@package/helpers/getDateRangeDescription';
 import { BodyClass } from '@plone/volto/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Container } from 'semantic-ui-react';
@@ -17,49 +18,6 @@ const messages = defineMessages({
     defaultMessage: 'Future',
   },
 });
-
-const getDateRangeDescription = (lang, start, end) => {
-  if (
-    !end ||
-    (start.getMonth() === end.getMonth() &&
-      start.getFullYear() === end.getFullYear() &&
-      start.getDate() === end.getDate())
-  ) {
-    return new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    }).format(start);
-  }
-
-  if (
-    start.getMonth() === end.getMonth() &&
-    start.getFullYear() === end.getFullYear()
-  ) {
-    return `${new Intl.DateTimeFormat(lang, {
-      day: 'numeric',
-    }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-      lang,
-      {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-      },
-    ).format(end)}`;
-  }
-
-  return `${new Intl.DateTimeFormat(lang, {
-    day: 'numeric',
-    month: 'short',
-  }).format(start)} ${lang === 'nl' ? 't/m' : 'to'} ${new Intl.DateTimeFormat(
-    lang,
-    {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric',
-    },
-  ).format(end)}`;
-};
 
 function HeroSection(props) {
   const intl = useIntl();
