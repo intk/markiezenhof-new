@@ -8,7 +8,7 @@ import { Grid } from 'semantic-ui-react';
 
 const Card = ({ item, showDescription = true, hideDates = false }) => {
   const intl = useIntl();
-  const wholeDay = typeof item.whole_day === 'boolean' ? item.whole_day : false;
+  const wholeDay = typeof item.whole_day === 'boolean' ? item.whole_day : true;
   const start = item.start ? new Date(item.start) : undefined;
   const end = item.end ? new Date(item.end) : undefined;
   const image = item?.image_field

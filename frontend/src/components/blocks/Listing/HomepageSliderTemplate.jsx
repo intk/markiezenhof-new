@@ -29,7 +29,7 @@ const messages = defineMessages({
 
 const Card = ({ item, index, hideText }) => {
   const { title, start, end, whole_day } = item || {};
-  const wholeDay = typeof whole_day === 'boolean' ? whole_day : false;
+  const wholeDay = typeof whole_day === 'boolean' ? whole_day : true;
   const isEvent = item?.['@type'] === 'Event';
   const endDate = new Date(end || Date.now());
   const startDate = new Date(start || Date.now());
