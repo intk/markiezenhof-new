@@ -1,17 +1,16 @@
 export function getDateRangeDescription(lang, start, end, wholeDay = true) {
-  // const startTime = new Intl.DateTimeFormat(lang, {
-  //   hour: 'numeric',
-  //   minute: 'numeric',
-  // }).format(start);
+  const startTime = new Intl.DateTimeFormat(lang, {
+    hour: 'numeric',
+    minute: 'numeric',
+  }).format(start);
 
-  // const endTime = new Intl.DateTimeFormat(lang, {
-  //   hour: 'numeric',
-  //   minute: 'numeric',
-  // }).format(end);
+  const endTime = new Intl.DateTimeFormat(lang, {
+    hour: 'numeric',
+    minute: 'numeric',
+  }).format(end);
 
-  // const time =
-  //   wholeDay || startTime === endTime ? '' : `, ${startTime} - ${endTime}`;
-  const time = '';
+  const time =
+    wholeDay || startTime === endTime ? '' : `, ${startTime} - ${endTime}`;
 
   if (
     !end ||
