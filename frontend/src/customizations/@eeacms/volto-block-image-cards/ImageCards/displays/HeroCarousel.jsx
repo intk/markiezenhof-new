@@ -170,10 +170,7 @@ const HeroCarousel = (props) => {
                   style={
                     image
                       ? {
-                          backgroundImage: `url(${getScaleUrl(
-                            image,
-                            'great',
-                          )})`,
+                          backgroundImage: `url(${getScaleUrl(image, 'huge')})`,
                           height: `${height}`,
                           // backgroundSize: 'fit',
                           backgroundPosition: 'center',

@@ -2,17 +2,17 @@ import { isInternalURL } from '@plone/volto/helpers';
 // import config from '@plone/volto/registry';
 
 function findNameOfBiggestImage(images) {
-  let maxHeight = 0;
-  let objectNameWithMaxHeight = 'teaser';
+  let maxWidth = 0;
+  let objectNameWithMaxWidth = 'teaser';
 
   for (const [key, value] of Object.entries(images)) {
-    if (value.height > maxHeight) {
-      maxHeight = value.height;
-      objectNameWithMaxHeight = key;
+    if (value.width > maxWidth) {
+      maxWidth = value.width;
+      objectNameWithMaxWidth = key;
     }
   }
 
-  return objectNameWithMaxHeight;
+  return objectNameWithMaxWidth;
 }
 
 export function getTeaserImageURL({ href, image }) {
