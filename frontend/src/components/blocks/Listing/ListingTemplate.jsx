@@ -8,7 +8,6 @@ import { Grid } from 'semantic-ui-react';
 
 const Card = ({ item, showDescription = true, hideDates = false }) => {
   const intl = useIntl();
-  const wholeDay = typeof item.whole_day === 'boolean' ? item.whole_day : true;
   const start = item.start ? new Date(item.start) : undefined;
   const end = item.end ? new Date(item.end) : undefined;
   const image = item?.image_field
@@ -35,14 +34,14 @@ const Card = ({ item, showDescription = true, hideDates = false }) => {
           {item['@type'] === 'Event' && start && end && (
             <div className="listing-dates">
               <div className={`listing-dates-wrapper`}>
-                {getDateRangeDescription(intl.locale, start, end, wholeDay)}
+                {getDateRangeDescription(intl.locale, start, end)}
               </div>
             </div>
           )}
           {item['@type'] === 'News Item' && (
             <div className="listing-dates">
               <div className={`listing-dates-wrapper`}>
-                {getDateRangeDescription(intl.locale, start, end, wholeDay)}
+                {getDateRangeDescription(intl.locale, start, end)}
               </div>
             </div>
           )}

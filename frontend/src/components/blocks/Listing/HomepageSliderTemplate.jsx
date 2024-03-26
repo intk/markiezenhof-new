@@ -28,8 +28,7 @@ const messages = defineMessages({
 });
 
 const Card = ({ item, index, hideText }) => {
-  const { title, start, end, whole_day } = item || {};
-  const wholeDay = typeof whole_day === 'boolean' ? whole_day : true;
+  const { title, start, end } = item || {};
   const isEvent = item?.['@type'] === 'Event';
   const endDate = new Date(end || Date.now());
   const startDate = new Date(start || Date.now());
@@ -84,12 +83,7 @@ const Card = ({ item, index, hideText }) => {
                   <h1 className="slide-title hero">{title || ''}</h1>
                   {startDate && isEvent && (
                     <p className="slide-description hero">
-                      {getDateRangeDescription(
-                        intl.locale,
-                        startDate,
-                        endDate,
-                        wholeDay,
-                      )}
+                      {getDateRangeDescription(intl.locale, startDate, endDate)}
                     </p>
                   )}
                 </div>

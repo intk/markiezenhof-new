@@ -1,4 +1,4 @@
-export function getDateRangeDescription(lang, start, end, wholeDay = true) {
+export function getDateRangeDescription(lang, start, end) {
   const startTime = new Intl.DateTimeFormat(lang, {
     hour: 'numeric',
     minute: 'numeric',
@@ -8,6 +8,8 @@ export function getDateRangeDescription(lang, start, end, wholeDay = true) {
     hour: 'numeric',
     minute: 'numeric',
   }).format(end);
+
+  const wholeDay = startTime === '00:00' && endTime === '23:59';
 
   const time =
     wholeDay || startTime === endTime ? '' : `, ${startTime} - ${endTime}`;
